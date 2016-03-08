@@ -1,0 +1,13 @@
+Jiffy Gallery Press requires:
+
+
+    Client-side environment:
+
+     * Generic web browser with HTML5 support.
+     * JavaScript enabled in the web browser.
+
+
+    Server-side environment:
+
+     * PHP version >= 5.3
+     * WordPress version >= 3.8.3
