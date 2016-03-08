@@ -27,3 +27,13 @@
   You should have received a copy of the GNU General Public License
   along with Jiffy Gallery Press.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+
+.jiffy-gallery-press--container {
+    display:                flex;
+    flex-wrap:              wrap;
+}
+
+.jiffy-gallery-press--container .jiffy-gallery-press--thumbnail {
+    display:                block;
+}
