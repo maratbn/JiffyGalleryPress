@@ -1,7 +1,7 @@
 <?php
 /*
   Plugin Name: Jiffy Gallery Press
-  Description: Setup image galleries in a jiffy.
+  Description: Setup image galleries in a jiffy via shortcodes associated with image slugs.
   Author: Marat Nepomnyashy
   Author URI: http://www.maratbn.com
   License: GPL3
@@ -11,7 +11,7 @@
 
 /*
   Jiffy Gallery Press -- WordPress plugin for setting up image galleries in a
-                         jiffy.
+                         jiffy via shortcodes associated with image slugs.
 
   Copyright (C) 2016  Marat Nepomnyashy  http://maratbn.com  maratbn@gmail
 
