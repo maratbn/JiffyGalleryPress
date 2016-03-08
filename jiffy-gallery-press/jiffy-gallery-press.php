@@ -45,4 +45,25 @@ const PLUGIN_VERSION = '0.0.1-development_unreleased';
 
 const IS_MODE_RELEASE = false;
 
+
+const PHP_VERSION_MIN_SUPPORTED = '5.3';
+
+const DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS = 'domain-plugin-JiffyGalleryPress';
+
+
+\register_activation_hook(__FILE__, '\\plugin_JiffyGalleryPress\\plugin_activation_hook');
+
+
+function plugin_activation_hook() {
+    if (\version_compare(\strtolower(PHP_VERSION), PHP_VERSION_MIN_SUPPORTED, '<')) {
+        \wp_die(
+            \sprintf(
+                \__('Plugin Jiffy Gallery Press cannot be activated because the currently active PHP version on this server is %s < %s and not supported.  PHP version >= %s is required.',
+                    DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS),
+                PHP_VERSION,
+                PHP_VERSION_MIN_SUPPORTED,
+                PHP_VERSION_MIN_SUPPORTED));
+    }
+}
+
 ?>
