@@ -55,6 +55,10 @@ const DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS = 'domain-plugin-JiffyGalleryPress';
 \register_activation_hook(__FILE__, '\\plugin_JiffyGalleryPress\\plugin_activation_hook');
 
 
+\add_action('wp_enqueue_scripts',
+            '\\plugin_JiffyGalleryPress\\action__wp_enqueue_scripts');
+
+
 \add_shortcode('jiffy-gallery-press',
                '\\plugin_JiffyGalleryPress\\shortcode__jiffy_gallery_press');
 
@@ -76,6 +80,14 @@ function _getPostForImageByName($strName) {
     return $arrPosts[0];
 }
 
+/**
+ *  Returns unique version args to append to a resource URL to make
+ *  that resource be unique in the browser cache.
+ */
+function _getUVArg() {
+    return 'uv=' . PLUGIN_VERSION . (IS_MODE_RELEASE ? "" : ('_' . time() . rand()));
+}
+
 function plugin_activation_hook() {
     if (\version_compare(\strtolower(PHP_VERSION), PHP_VERSION_MIN_SUPPORTED, '<')) {
         \wp_die(
@@ -86,6 +98,13 @@ function plugin_activation_hook() {
                 PHP_VERSION_MIN_SUPPORTED,
                 PHP_VERSION_MIN_SUPPORTED));
     }
+}
+
+function action__wp_enqueue_scripts() {
+    \wp_enqueue_style('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_css',
+                      plugin_dir_url(__FILE__) . '/jiffy-gallery-press.css',
+                      null,
+                      _getUVArg());
 }
 
 function shortcode__jiffy_gallery_press($arrAttrs) {
