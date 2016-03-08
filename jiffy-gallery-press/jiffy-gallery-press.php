@@ -55,6 +55,27 @@ const DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS = 'domain-plugin-JiffyGalleryPress';
 \register_activation_hook(__FILE__, '\\plugin_JiffyGalleryPress\\plugin_activation_hook');
 
 
+\add_shortcode('jiffy-gallery-press',
+               '\\plugin_JiffyGalleryPress\\shortcode__jiffy_gallery_press');
+
+
+function _get(&$var, $default = null) {
+    return isset($var) ? $var : $default;
+}
+
+function _getPostForImageByName($strName) {
+    if ($strName == null) return null;
+
+    $objQuery = new \WP_Query(array('post_type'  =>'attachment',
+                                    'name'       => $strName));
+    if (!$objQuery) return null;
+
+    $arrPosts = $objQuery->posts;
+    if (!$arrPosts || \count($arrPosts) == 0) return null;
+
+    return $arrPosts[0];
+}
+
 function plugin_activation_hook() {
     if (\version_compare(\strtolower(PHP_VERSION), PHP_VERSION_MIN_SUPPORTED, '<')) {
         \wp_die(
@@ -65,6 +86,40 @@ function plugin_activation_hook() {
                 PHP_VERSION_MIN_SUPPORTED,
                 PHP_VERSION_MIN_SUPPORTED));
     }
+}
+
+function shortcode__jiffy_gallery_press($arrAttrs) {
+    $strItems = _get($arrAttrs['items']);
+    $arrItems = \preg_split('/\s+/', $strItems);
+
+    $arrOutputThumbnails = array();
+
+    $totalItems = \count($arrItems);
+
+    for ($i = 0; $i < $totalItems; $i++) {
+        $strItem = $arrItems[$i];
+        $postItem = _getPostForImageByName($strItem);
+        if (!$postItem) continue;
+
+        $objImage = \wp_get_attachment_image_src($postItem->ID, 'thumbnail');
+        if (!$objImage) continue;
+
+        $urlImage = $objImage[0];
+
+        \array_push(
+            $arrOutputThumbnails,
+            \implode(array(
+                '<img',
+                  ' class=\'jiffy-gallery-press--thumbnail\'',
+                  ' src=\'',
+                    $urlImage,
+                    '\'>')));
+    }
+
+    return \implode(array(
+                '<div class=\'jiffy-gallery-press--container\'>',
+                  \implode($arrOutputThumbnails),
+                '</div>'));
 }
 
 ?>
