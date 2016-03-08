@@ -43,6 +43,7 @@ namespace plugin_JiffyGalleryPress;
 
 const PLUGIN_VERSION = '0.0.1-development_unreleased';
 
+
 const IS_MODE_RELEASE = false;
 
 
