@@ -115,6 +115,8 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
 
     $totalItems = \count($arrItems);
 
+    $arrDataThumbnails = array();
+
     for ($i = 0; $i < $totalItems; $i++) {
         $strItem = $arrItems[$i];
         $postItem = _getPostForImageByName($strItem);
@@ -126,6 +128,14 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
         $urlImage = $objImage[0];
         if ($urlImage == null) continue;
 
+        \array_push($arrDataThumbnails, array('url' => $urlImage));
+    }
+
+    $totalThumbnails = \count($arrDataThumbnails);
+
+    for ($i = 0; $i < $totalThumbnails; $i++) {
+        $objThumbnail = $arrDataThumbnails[$i];
+
         \array_push(
             $arrOutputThumbnails,
             \implode(array(
@@ -133,7 +143,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
                   '<img',
                     ' class=\'jiffy-gallery-press--thumbnail\'',
                     ' src=\'',
-                      $urlImage,
+                      $objThumbnail['url'],
                       '\'>',
                 '</a>')));
     }
