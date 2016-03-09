@@ -32,6 +32,7 @@
 .jiffy-gallery-press--container {
     display:                flex;
     flex-wrap:              wrap;
+    justify-content:        center;
 }
 
 .jiffy-gallery-press--container .jiffy-gallery-press--thumbnail {
