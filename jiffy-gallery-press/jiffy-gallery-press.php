@@ -120,7 +120,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
         $postItem = _getPostForImageByName($strItem);
         if (!$postItem) continue;
 
-        $objImage = \wp_get_attachment_image_src($postItem->ID, 'thumbnail');
+        $objImage = \wp_get_attachment_image_src($postItem->ID, array(150, 150));
         if (!$objImage) continue;
 
         $urlImage = $objImage[0];
