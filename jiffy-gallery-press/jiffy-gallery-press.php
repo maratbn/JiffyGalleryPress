@@ -116,6 +116,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
     $totalItems = \count($arrItems);
 
     $arrDataThumbnails = array();
+    $arrIDsThumbnails = array();
 
     for ($i = 0; $i < $totalItems; $i++) {
         $strItem = $arrItems[$i];
@@ -129,9 +130,11 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
         if ($urlImage == null) continue;
 
         \array_push($arrDataThumbnails, array('url' => $urlImage));
+        \array_push($arrIDsThumbnails, $postItem->ID);
     }
 
     $totalThumbnails = \count($arrDataThumbnails);
+    $strIDsThumbnails = \implode($arrIDsThumbnails, ',');
 
     for ($i = 0; $i < $totalThumbnails; $i++) {
         $objThumbnail = $arrDataThumbnails[$i];
@@ -139,7 +142,9 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
         \array_push(
             $arrOutputThumbnails,
             \implode(array(
-                '<a class=\'jiffy-gallery-press--a\' href=\'#jgp_closeup\'>',
+                '<a class=\'jiffy-gallery-press--a\' href=\'#jgp_closeup&items=',
+                            $strIDsThumbnails,
+                         '\'>',
                   '<img',
                     ' class=\'jiffy-gallery-press--thumbnail\'',
                     ' src=\'',
