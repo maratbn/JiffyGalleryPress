@@ -129,7 +129,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
         \array_push(
             $arrOutputThumbnails,
             \implode(array(
-                '<a href=\'#\'>',
+                '<a class=\'jiffy-gallery-press--a\' href=\'#\'>',
                   '<img',
                     ' class=\'jiffy-gallery-press--thumbnail\'',
                     ' src=\'',
