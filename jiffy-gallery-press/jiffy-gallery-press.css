@@ -37,4 +37,6 @@
 
 .jiffy-gallery-press--container .jiffy-gallery-press--thumbnail {
     display:                block;
+    width:                  150px;
+    height:                 150px;
 }
