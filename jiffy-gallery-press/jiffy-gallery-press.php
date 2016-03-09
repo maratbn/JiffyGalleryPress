@@ -124,6 +124,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
         if (!$objImage) continue;
 
         $urlImage = $objImage[0];
+        if ($urlImage == null) continue;
 
         \array_push(
             $arrOutputThumbnails,
