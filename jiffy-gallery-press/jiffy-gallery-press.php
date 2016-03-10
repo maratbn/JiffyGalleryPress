@@ -55,8 +55,14 @@ const DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS = 'domain-plugin-JiffyGalleryPress';
 \register_activation_hook(__FILE__, '\\plugin_JiffyGalleryPress\\plugin_activation_hook');
 
 
+\add_action('wp_ajax_jiffy_gallery_press__get_image',
+            '\\plugin_JiffyGalleryPress\\action__wp_ajax_jiffy_gallery_press__get_image');
+\add_action('wp_ajax_nopriv_jiffy_gallery_press__get_image',
+            '\\plugin_JiffyGalleryPress\\action__wp_ajax_jiffy_gallery_press__get_image');
 \add_action('wp_enqueue_scripts',
             '\\plugin_JiffyGalleryPress\\action__wp_enqueue_scripts');
+\add_action('wp_print_footer_scripts',
+            '\\plugin_JiffyGalleryPress\\action_wp_print_footer_scripts');
 
 
 \add_shortcode('jiffy-gallery-press',
@@ -100,6 +106,29 @@ function plugin_activation_hook() {
     }
 }
 
+function action__wp_ajax_jiffy_gallery_press__get_image() {
+    $post_id = _get($_GET['id']);
+    if ($post_id == null) die;
+
+    if (\get_post_status($post_id) != 'publish') die;
+
+    $post = \get_post($post_id);
+    if ($post == null) die;
+
+    header('Content-type: ' . $post->post_mime_type);
+
+    $file_handle = \fopen(\get_attached_file($post_id), 'rb');
+    if (!$file_handle) die;
+
+    while ($data = \fread($file_handle, 4096)) {
+        echo $data;
+    }
+
+    \fclose($file_handle);
+
+    die();
+}
+
 function action__wp_enqueue_scripts() {
     \wp_enqueue_script('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_js',
                        \plugin_dir_url(__FILE__) . '/jiffy-gallery-press.js',
@@ -110,6 +139,18 @@ function action__wp_enqueue_scripts() {
                       plugin_dir_url(__FILE__) . '/jiffy-gallery-press.css',
                       null,
                       _getUVArg());
+}
+
+function action_wp_print_footer_scripts() {
+?>
+<script type='text/javascript'>
+    jQuery(document).ready(function($) {
+            new JiffyGalleryPressLightbox({
+                        ajax_url:  <?=\json_encode(\admin_url('admin-ajax.php'))?>, $: $
+                    });
+        });
+</script>
+<?php
 }
 
 function shortcode__jiffy_gallery_press($arrAttrs) {
