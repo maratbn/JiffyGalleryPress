@@ -101,6 +101,11 @@ function plugin_activation_hook() {
 }
 
 function action__wp_enqueue_scripts() {
+    \wp_enqueue_script('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_js',
+                       \plugin_dir_url(__FILE__) . '/jiffy-gallery-press.js',
+                       array('jquery'),
+                       _getUVArg());
+
     \wp_enqueue_style('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_css',
                       plugin_dir_url(__FILE__) . '/jiffy-gallery-press.css',
                       null,
