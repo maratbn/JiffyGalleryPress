@@ -85,15 +85,48 @@ function JiffyGalleryPressLightbox(params) {
                                       'opacity':           0.95})
                                 .appendTo($body),
 
-        $divPhoto   = $('<div>').css({'position':          'fixed',
+        $divPhotoC  = $('<div>').css({'position':          'fixed',
                                       'top':               0,
                                       'left':              0,
                                       'bottom':            0,
-                                      'right':             0,
-                                      'background-position': 'center center',
+                                      'right':             0})
+                                .appendTo($body),
+
+        $divPhoto   = $('<div>').css({'width':             '100%',
+                                      'height':            '100%',
+                                      'background-position':
+                                                           'center center',
                                       'background-repeat': 'no-repeat',
                                       'background-size':   'contain'})
-                                .appendTo($body);
+                                .appendTo($divPhotoC),
+
+        $divBrowser = $('<div>').css({'background-color':  'black',
+                                      'position':          'absolute',
+                                      'left':              0,
+                                      'right':             0,
+                                      'bottom':            0,
+                                      'text-align':        'center'
+                                    })
+                                .appendTo($divPhotoC),
+
+        $aPrev      = $('<a>').css({'margin':              '0 10px',
+                                    'color':               'white',
+                                    'text-decoration':     'none'})
+                              .text("Prev")
+                              .appendTo($divBrowser),
+
+        $aClose     = $('<a>').attr('href', '#jgp_close')
+                              .css({'margin':              '0 10px',
+                                    'color':               'white',
+                                    'text-decoration':     'none'})
+                              .text("Close")
+                              .appendTo($divBrowser),
+
+        $aNext      = $('<a>').css({'margin':              '0 10px',
+                                    'color':               'white',
+                                    'text-decoration':     'none'})
+                              .text("Next")
+                              .appendTo($divBrowser);
 
 
     function _processUrlFragment() {
@@ -102,13 +135,24 @@ function JiffyGalleryPressLightbox(params) {
         var strDisplay = objBrowseInfo ? "" : 'none';
 
         $divScreen.css('display', strDisplay);
-        $divPhoto.css('display', strDisplay);
+        $divPhotoC.css('display', strDisplay);
 
         if (!objBrowseInfo) return;
 
         $divPhoto.css('background-image',
                       'url(' + ajax_url + '?action=jiffy_gallery_press__get_image&id='
                                         + objBrowseInfo.items[objBrowseInfo.pos] + ')');
+
+        var posPrev = objBrowseInfo.pos - 1;
+        if (posPrev < 0) posPrev = objBrowseInfo.items.length - 1;
+
+        var posNext = window.parseInt(objBrowseInfo.pos) + 1;
+        if (posNext >= objBrowseInfo.items.length) posNext = 0;
+
+        var strItemIDs = objBrowseInfo.items.join(',');
+
+        $aPrev.attr('href', '#jgp_closeup&pos=' + posPrev + '&items=' + strItemIDs);
+        $aNext.attr('href', '#jgp_closeup&pos=' + posNext + '&items=' + strItemIDs);
     }
     _processUrlFragment();
     $(window).on('hashchange', _processUrlFragment);
