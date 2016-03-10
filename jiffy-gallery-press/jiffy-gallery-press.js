@@ -112,7 +112,7 @@ function JiffyGalleryPressLightbox(params) {
         $aPrev      = $('<a>').css({'margin':              '0 10px',
                                     'color':               'white',
                                     'text-decoration':     'none'})
-                              .text("Prev")
+                              .text("< Prev")
                               .appendTo($divBrowser),
 
         $aClose     = $('<a>').attr('href', '#jgp_close')
@@ -125,7 +125,7 @@ function JiffyGalleryPressLightbox(params) {
         $aNext      = $('<a>').css({'margin':              '0 10px',
                                     'color':               'white',
                                     'text-decoration':     'none'})
-                              .text("Next")
+                              .text("Next >")
                               .appendTo($divBrowser);
 
 
