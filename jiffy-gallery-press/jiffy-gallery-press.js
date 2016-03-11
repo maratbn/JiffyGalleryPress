@@ -102,6 +102,7 @@ function JiffyGalleryPressLightbox(params) {
 
         $divBrowser = $('<div>').css({'background-color':  'black',
                                       'opacity':           '0.7',
+                                      'font-weight':       'bold',
                                       'position':          'absolute',
                                       'left':              0,
                                       'right':             0,
