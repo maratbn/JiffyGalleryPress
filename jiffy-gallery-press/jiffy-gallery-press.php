@@ -11,7 +11,10 @@
 
 /*
   Jiffy Gallery Press -- WordPress plugin for setting up image galleries in a
-                         jiffy via shortcodes associated with image slugs.
+                         jiffy via shortcodes associated with image slugs, and
+                         for having the images load in a jiffy by downloading
+                         only the minimum size image necessary for the client
+                         viewport size.
 
   Copyright (C) 2016  Marat Nepomnyashy  http://maratbn.com  maratbn@gmail
 
