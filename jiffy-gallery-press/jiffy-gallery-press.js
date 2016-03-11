@@ -135,7 +135,13 @@ function JiffyGalleryPressLightbox(params) {
                               .text("Next >")
                               .appendTo($divBrowser),
 
-        $window     = $(window);
+        $window     = $(window),
+
+        $head       = $('head'),
+
+        $metaV      = $('<meta>').attr({'name':     'viewport',
+                                        'content':
+                   'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'});
 
 
     function _processUrlFragment() {
@@ -146,7 +152,12 @@ function JiffyGalleryPressLightbox(params) {
         $divScreen.css('display', strDisplay);
         $divPhotoC.css('display', strDisplay);
 
-        if (!objBrowseInfo) return;
+        if (!objBrowseInfo) {
+            $metaV.remove();
+            return;
+        }
+
+        $metaV.appendTo($head);
 
         $divPhoto.css('background-image',
                       'url(' + ajax_url + '?action=jiffy_gallery_press__get_image&id='
