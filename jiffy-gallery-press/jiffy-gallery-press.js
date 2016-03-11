@@ -130,7 +130,9 @@ function JiffyGalleryPressLightbox(params) {
                                     'color':               'white',
                                     'text-decoration':     'none'})
                               .text("Next >")
-                              .appendTo($divBrowser);
+                              .appendTo($divBrowser),
+
+        $window     = $(window);
 
 
     function _processUrlFragment() {
@@ -159,5 +161,5 @@ function JiffyGalleryPressLightbox(params) {
         $aNext.attr('href', '#jgp_closeup&pos=' + posNext + '&items=' + strItemIDs);
     }
     _processUrlFragment();
-    $(window).on('hashchange', _processUrlFragment);
+    $window.on('hashchange', _processUrlFragment);
 }
