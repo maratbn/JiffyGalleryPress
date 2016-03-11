@@ -147,7 +147,9 @@ function JiffyGalleryPressLightbox(params) {
 
         $divPhoto.css('background-image',
                       'url(' + ajax_url + '?action=jiffy_gallery_press__get_image&id='
-                                        + objBrowseInfo.items[objBrowseInfo.pos] + ')');
+                                        + objBrowseInfo.items[objBrowseInfo.pos]
+                                        + '&width=' + $window.width()
+                                        + '&height=' + $window.height() + ')');
 
         var posPrev = objBrowseInfo.pos - 1;
         if (posPrev < 0) posPrev = objBrowseInfo.items.length - 1;

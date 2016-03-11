@@ -115,9 +115,83 @@ function action__wp_ajax_jiffy_gallery_press__get_image() {
     $post = \get_post($post_id);
     if ($post == null) die;
 
-    header('Content-type: ' . $post->post_mime_type);
+    $widthClient = _get($_GET['width']);
+    $heightClient = _get($_GET['height']);
 
-    $file_handle = \fopen(\get_attached_file($post_id), 'rb');
+    $strImageDir = \dirname(\get_attached_file($post_id)) . \DIRECTORY_SEPARATOR;
+
+    $strMinImageFilename = null;
+    $strMinMimeType = null;
+
+    $strMaxImageFilename = null;
+    $strMaxMimeType = null;
+
+    if ($widthClient > 0 && $heightClient > 0) {
+        $objPostMeta = \get_post_meta($post_id);
+        $arrAttachmentMeta = $objPostMeta ? _get($objPostMeta['_wp_attachment_metadata']) : null;
+
+        $deltaWidthMin = null;
+        $deltaHeightMin = null;
+
+        $areaMax = null;
+
+        foreach ($arrAttachmentMeta as $strAttachmentMeta) {
+            $objAttachmentMeta = \unserialize($strAttachmentMeta);
+            $objAttachmentSizes = _get($objAttachmentMeta['sizes']);
+
+            foreach ($objAttachmentSizes as $objAttachmentSize) {
+                $widthThumb = _get($objAttachmentSize['width']);
+                $heightThumb = _get($objAttachmentSize['height']);
+                if ($widthThumb == null || $heightThumb == null) continue;
+
+                $strFilenameHere = _get($objAttachmentSize['file']);
+                if ($strFilenameHere == null) continue;
+
+                $strMimeTypeHere = _get($objAttachmentSize['mime-type']);
+                if ($strMimeTypeHere == null) continue;
+
+                $strFilenamePath = $strImageDir . $strFilenameHere;
+                if (!\file_exists($strFilenamePath)) continue;
+
+                $deltaWidthHere = $widthThumb - $widthClient;
+                if ($widthThumb >= $widthClient) {
+                    if ($deltaWidthMin == null || $deltaWidthHere < $deltaWidthMin) {
+                        $deltaWidthMin        = $deltaWidthHere;
+                        $strMinImageFilename  = $strFilenamePath;
+                        $strMinMimeType       = $strMimeTypeHere;
+                    }
+                }
+
+                $deltaHeightHere = $heightThumb - $heightClient;;
+                if ($heightThumb >= $heightClient) {
+                    if ($deltaHeightMin == null || $deltaHeightHere < $deltaHeightMin) {
+                        $deltaHeightMin       = $deltaHeightHere;
+                        $strMinImageFilename  = $strFilenamePath;
+                        $strMinMimeType       = $strMimeTypeHere;
+                    }
+                }
+
+                $areaHere = $widthThumb * $heightThumb;
+                if ($areaMax == null || $areaMax < $areaHere) {
+                    $areaMax                  = $areaHere;
+                    $strMaxImageFilename      = $strFilenamePath;
+                    $strMaxMimeType           = $strMimeTypeHere;
+                }
+            }
+        }
+    }
+
+    $strUseImageFilename  = $strMinImageFilename;
+    $strUseMimeType       = $strMinMimeType;
+    if ($strUseImageFilename == null) {
+        $strUseImageFilename  = $strMaxImageFilename;
+        $strUseMimeType       = $strMaxMimeType;
+    }
+    if ($strUseImageFilename == null) die();
+
+    header('Content-type: ' . $strUseMimeType);
+
+    $file_handle = \fopen($strUseImageFilename, 'rb');
     if (!$file_handle) die;
 
     while ($data = \fread($file_handle, 4096)) {
