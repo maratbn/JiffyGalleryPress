@@ -101,7 +101,7 @@ function JiffyGalleryPressLightbox(params) {
                                 .appendTo($divPhotoC),
 
         $divBrowser = $('<div>').css({'background-color':  'black',
-                                      'opacity':           '0.5',
+                                      'opacity':           '0.7',
                                       'position':          'absolute',
                                       'left':              0,
                                       'right':             0,
