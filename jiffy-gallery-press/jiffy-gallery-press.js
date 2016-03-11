@@ -90,9 +90,10 @@ function JiffyGalleryPressLightbox(params) {
                                       'left':              0,
                                       'bottom':            0,
                                       'right':             0})
-                                .appendTo($body),
+                                .appendTo($body);
 
-        $divPhoto   = $('<div>').css({'width':             '100%',
+
+    var $divPhoto   = $('<div>').css({'width':             '100%',
                                       'height':            '100%',
                                       'background-position':
                                                            'center center',
@@ -109,9 +110,10 @@ function JiffyGalleryPressLightbox(params) {
                                       'bottom':            0,
                                       'text-align':        'center'
                                     })
-                                .appendTo($divPhotoC),
+                                .appendTo($divPhotoC);
 
-        $aPrev      = $('<a>').css({'margin':              '0 10px',
+
+    var $aPrev      = $('<a>').css({'margin':              '0 10px',
                                     'color':               'white',
                                     'text-decoration':     'none'})
                               .text("< Prev")
