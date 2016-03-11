@@ -146,7 +146,9 @@ function action_wp_print_footer_scripts() {
 <script type='text/javascript'>
     jQuery(document).ready(function($) {
             new JiffyGalleryPressLightbox({
-                        ajax_url:  <?=\json_encode(\admin_url('admin-ajax.php'))?>, $: $
+                        ajax_url:  <?=\json_encode(
+                                       \wp_make_link_relative(
+                                        \admin_url('admin-ajax.php')))?>, $: $
                     });
         });
 </script>
