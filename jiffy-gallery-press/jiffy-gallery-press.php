@@ -5,7 +5,7 @@
   Author: Marat Nepomnyashy
   Author URI: http://www.maratbn.com
   License: GPL3
-  Version: 0.0.1-development_unreleased
+  Version: 0.0.2-development_unreleased
   Text Domain: domain-plugin-JiffyGalleryPress
 */
 
@@ -15,7 +15,7 @@
 
   Copyright (C) 2016  Marat Nepomnyashy  http://maratbn.com  maratbn@gmail
 
-  Version:        0.0.1-development_unreleased
+  Version:        0.0.2-development_unreleased
 
   Module:         jiffy-gallery-press/jiffy-gallery-press.php
 
@@ -41,7 +41,7 @@
 
 namespace plugin_JiffyGalleryPress;
 
-const PLUGIN_VERSION = '0.0.1-development_unreleased';
+const PLUGIN_VERSION = '0.0.2-development_unreleased';
 
 
 const IS_MODE_RELEASE = false;
