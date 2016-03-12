@@ -67,7 +67,7 @@ const LEN_BUFFER_FILE_READ = 4096;
 \add_action('wp_enqueue_scripts',
             '\\plugin_JiffyGalleryPress\\action__wp_enqueue_scripts');
 \add_action('wp_print_footer_scripts',
-            '\\plugin_JiffyGalleryPress\\action_wp_print_footer_scripts');
+            '\\plugin_JiffyGalleryPress\\action__wp_print_footer_scripts');
 
 
 \add_shortcode('jiffy-gallery-press',
@@ -220,7 +220,7 @@ function action__wp_enqueue_scripts() {
                       _getUVArg());
 }
 
-function action_wp_print_footer_scripts() {
+function action__wp_print_footer_scripts() {
 ?>
 <script type='text/javascript'>
     jQuery(document).ready(function($) {
