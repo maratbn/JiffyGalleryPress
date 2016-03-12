@@ -58,6 +58,8 @@ const LEN_BUFFER_FILE_READ = 4096;
 
 const SLUG_INFO_SETTINGS = 'plugin_JiffyGalleryPress_admin';
 
+const SHORTCODE__JIFFY_GALLERY_PRESS = 'jiffy-gallery-press';
+
 
 \register_activation_hook(__FILE__, '\\plugin_JiffyGalleryPress\\plugin_activation_hook');
 
@@ -72,7 +74,7 @@ const SLUG_INFO_SETTINGS = 'plugin_JiffyGalleryPress_admin';
             '\\plugin_JiffyGalleryPress\\action__wp_print_footer_scripts');
 
 
-\add_shortcode('jiffy-gallery-press',
+\add_shortcode(SHORTCODE__JIFFY_GALLERY_PRESS,
                '\\plugin_JiffyGalleryPress\\shortcode__jiffy_gallery_press');
 
 
@@ -321,7 +323,7 @@ function renderPageInfoSettings() {
   ?><ul><?php
     while ($w_p_query->have_posts()) {
         $w_p_query->the_post();
-        if (!\has_shortcode($post->post_content, 'jiffy-gallery-press')) continue;
+        if (!\has_shortcode($post->post_content, SHORTCODE__JIFFY_GALLERY_PRESS)) continue;
 
     ?><li><?=$post->post_name?></li><?php
     }
