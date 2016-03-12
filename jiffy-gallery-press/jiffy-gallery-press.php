@@ -309,6 +309,23 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
 function renderPageInfoSettings() {
 ?><div class='wrap'><?php
   ?><h1><?=\__('Jiffy Gallery Press Info / Settings', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h1><?php
+
+    $w_p_query = new \WP_Query(array('order'           => 'ASC',
+                                     'orderby'         => 'name',
+                                     'post_status'     => 'any',
+                                     'post_type'       => \get_post_types(array('public' => true)),
+                                     'posts_per_page'  => -1));
+
+    global $post;
+
+  ?><ul><?php
+    while ($w_p_query->have_posts()) {
+        $w_p_query->the_post();
+        if (!\has_shortcode($post->post_content, 'jiffy-gallery-press')) continue;
+
+    ?><li><?=$post->post_name?></li><?php
+    }
+  ?><ul><?php
 ?></div><?php
 }
 ?>
