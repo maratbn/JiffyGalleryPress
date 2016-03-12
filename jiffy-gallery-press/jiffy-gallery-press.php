@@ -54,6 +54,8 @@ const PHP_VERSION_MIN_SUPPORTED = '5.3';
 
 const DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS = 'domain-plugin-JiffyGalleryPress';
 
+const LEN_BUFFER_FILE_READ = 4096;
+
 
 \register_activation_hook(__FILE__, '\\plugin_JiffyGalleryPress\\plugin_activation_hook');
 
@@ -197,7 +199,7 @@ function action__wp_ajax_jiffy_gallery_press__get_image() {
     $file_handle = \fopen($strUseImageFilename, 'rb');
     if (!$file_handle) die;
 
-    while ($data = \fread($file_handle, 4096)) {
+    while ($data = \fread($file_handle, LEN_BUFFER_FILE_READ)) {
         echo $data;
     }
 
