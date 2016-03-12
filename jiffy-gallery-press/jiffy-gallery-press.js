@@ -139,9 +139,8 @@ function JiffyGalleryPressLightbox(params) {
 
         $head       = $('head'),
 
-        $metaV      = $('<meta>').attr({'name':     'viewport',
-                                        'content':
-                   'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'});
+        $metaV      = $('<meta>').attr({'name':            'viewport',
+                                        'content':         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'});
 
 
     function _processUrlFragment() {
