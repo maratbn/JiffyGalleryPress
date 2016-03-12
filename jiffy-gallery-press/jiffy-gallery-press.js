@@ -139,6 +139,9 @@ function JiffyGalleryPressLightbox(params) {
 
         $head       = $('head'),
 
+        $metaA      = $('<meta>').attr({'name':            'apple-mobile-web-app-capable',
+                                        'content':         'yes'}),
+
         $metaV      = $('<meta>').attr({'name':            'viewport',
                                         'content':         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'});
 
@@ -152,10 +155,12 @@ function JiffyGalleryPressLightbox(params) {
         $divPhotoC.css('display', strDisplay);
 
         if (!objBrowseInfo) {
+            $metaA.remove();
             $metaV.remove();
             return;
         }
 
+        $metaA.appendTo($head);
         $metaV.appendTo($head);
 
         $divPhoto.css('background-image',
