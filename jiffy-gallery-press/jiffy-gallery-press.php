@@ -56,6 +56,8 @@ const DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS = 'domain-plugin-JiffyGalleryPress';
 
 const LEN_BUFFER_FILE_READ = 4096;
 
+const SLUG_INFO_SETTINGS = 'plugin_JiffyGalleryPress_admin';
+
 
 \register_activation_hook(__FILE__, '\\plugin_JiffyGalleryPress\\plugin_activation_hook');
 
@@ -72,6 +74,12 @@ const LEN_BUFFER_FILE_READ = 4096;
 
 \add_shortcode('jiffy-gallery-press',
                '\\plugin_JiffyGalleryPress\\shortcode__jiffy_gallery_press');
+
+
+if (\is_admin()) {
+    \add_action('admin_menu',
+                '\\plugin_JiffyGalleryPress\\action__admin_menu');
+}
 
 
 function _get(&$var, $default = null) {
@@ -109,6 +117,16 @@ function plugin_activation_hook() {
                 PHP_VERSION_MIN_SUPPORTED,
                 PHP_VERSION_MIN_SUPPORTED));
     }
+}
+
+function action__admin_menu() {
+    \add_submenu_page(
+        'tools.php',
+        \__('Jiffy Gallery Press Info / Settings', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS),
+        \__('Jiffy Gallery Press', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS),
+        'manage_options',
+        SLUG_INFO_SETTINGS,
+        '\\plugin_JiffyGalleryPress\\renderPageInfoSettings');
 }
 
 function action__wp_ajax_jiffy_gallery_press__get_image() {
@@ -288,4 +306,9 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
                 '</div>'));
 }
 
+function renderPageInfoSettings() {
+?>
+<h2><?=\__('Jiffy Gallery Press Info / Settings', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h2>
+<?php
+}
 ?>
