@@ -325,7 +325,9 @@ function renderPageInfoSettings() {
         $w_p_query->the_post();
         if (!\has_shortcode($post->post_content, SHORTCODE__JIFFY_GALLERY_PRESS)) continue;
 
-    ?><li><?=$post->post_name?></li><?php
+    ?><li><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
+        ?><?=$post->post_name?><?php
+      ?></a></li><?php
     }
   ?><ul><?php
 ?></div><?php
