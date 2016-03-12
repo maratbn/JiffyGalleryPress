@@ -64,8 +64,6 @@ const SHORTCODE__JIFFY_GALLERY_PRESS = 'jiffy-gallery-press';
 \register_activation_hook(__FILE__, '\\plugin_JiffyGalleryPress\\plugin_activation_hook');
 
 
-\add_action('wp_ajax_jiffy_gallery_press__get_image',
-            '\\plugin_JiffyGalleryPress\\action__wp_ajax_jiffy_gallery_press__get_image');
 \add_action('wp_ajax_nopriv_jiffy_gallery_press__get_image',
             '\\plugin_JiffyGalleryPress\\action__wp_ajax_jiffy_gallery_press__get_image');
 \add_action('wp_enqueue_scripts',
@@ -81,6 +79,8 @@ const SHORTCODE__JIFFY_GALLERY_PRESS = 'jiffy-gallery-press';
 if (\is_admin()) {
     \add_action('admin_menu',
                 '\\plugin_JiffyGalleryPress\\action__admin_menu');
+    \add_action('wp_ajax_jiffy_gallery_press__get_image',
+                '\\plugin_JiffyGalleryPress\\action__wp_ajax_jiffy_gallery_press__get_image');
 }
 
 
