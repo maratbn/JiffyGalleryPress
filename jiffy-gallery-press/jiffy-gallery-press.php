@@ -301,6 +301,8 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
                     ' class=\'jiffy-gallery-press--thumbnail\'',
                     ' src=\'', \esc_url_raw($objThumbnail['url']), '\'',
                     ' alt=\'', $strTitleEsc, '\'',
+                    ' data-caption=\'', $strTitleEsc, '\'',
+                    ' title=\'', $strTitleEsc, '\'',
                   '>',
                 '</a>')));
     }
