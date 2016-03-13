@@ -338,22 +338,26 @@ function renderPageInfoSettings() {
                         $strContent,
                         $arrMatchesShortcode,
                         \PREG_SET_ORDER);
+      ?><ul style='margin-left:1rem;'><?php
 
         foreach ($arrMatchesShortcode as $arrMatchShortcode) {
             $strListItems = $arrMatchShortcode[1];
             $arrListItems = \preg_split("/\s+|\s*,\s*/", $strListItems);
-        ?><ul style='margin-left:1rem;'><?php
-            foreach ($arrListItems as $strListItem) {
-                $postListItem = _getPostForImageByName($strListItem);
-                if (!$postListItem) continue;
+        ?><li><?=$arrMatchShortcode[0]?><?php
+          ?><ul style='margin-left:1rem;'><?php
+              foreach ($arrListItems as $strListItem) {
+                  $postListItem = _getPostForImageByName($strListItem);
+                  if (!$postListItem) continue;
 
-            ?><li><a href='<?=\esc_url_raw(
-                               \get_edit_post_link($postListItem->ID))?>' target='_blank'><?php
-                ?><?=$strListItem?><?php
-              ?></a></li><?php
-            }
-        ?></ul><?php
+              ?><li><a href='<?=\esc_url_raw(
+                                 \get_edit_post_link($postListItem->ID))?>' target='_blank'><?php
+                  ?><?=$strListItem?><?php
+                ?></a></li><?php
+              }
+          ?></ul><?php
+        ?></li><?php
         }
+      ?><ul><?php
     ?></li><?php
     }
   ?><ul><?php
