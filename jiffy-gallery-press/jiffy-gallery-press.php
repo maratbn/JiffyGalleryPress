@@ -276,7 +276,8 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
         $urlImage = $objImage[0];
         if ($urlImage == null) continue;
 
-        \array_push($arrDataThumbnails, array('url' => $urlImage));
+        \array_push($arrDataThumbnails, array('url'    => $urlImage,
+                                              'title'  => $postItem->post_title));
         \array_push($arrIDsThumbnails, $postItem->ID);
     }
 
@@ -297,6 +298,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
                   '<img',
                     ' class=\'jiffy-gallery-press--thumbnail\'',
                     ' src=\'', \esc_url_raw($objThumbnail['url']), '\'',
+                    ' alt=\'', \esc_attr($objThumbnail['title']), '\'',
                   '>',
                 '</a>')));
     }
