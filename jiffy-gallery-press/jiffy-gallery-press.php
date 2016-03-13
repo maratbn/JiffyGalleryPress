@@ -318,7 +318,8 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
 
 function renderPageInfoSettings() {
 ?><div class='wrap'><?php
-  ?><h1><?=\__('Jiffy Gallery Press Info / Settings', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h1><?php
+  ?><h1><?=\__('Jiffy Gallery Press Info / Settings',
+               DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h1><?php
 
     $w_p_query = new \WP_Query(array('order'           => 'ASC',
                                      'orderby'         => 'name',
