@@ -101,7 +101,8 @@ function _getMatchesInContent($strContent) {
 
     foreach ($arrMatchesShortcode as $arrMatchShortcode) {
         \array_push($arrMatches, array('shortcode'  => $arrMatchShortcode[0],
-                                       'items'      => $arrMatchShortcode[1]));
+                                       'items'      => \preg_split("/\s+|\s*,\s*/",
+                                                                   $arrMatchShortcode[1])));
     }
 
     return $arrMatches;
@@ -363,8 +364,7 @@ function renderPageInfoSettings() {
         $arrMatchesShortcode = _getMatchesInContent($strContent);
 
         foreach ($arrMatchesShortcode as $arrMatchShortcode) {
-            $strListItems = $arrMatchShortcode['items'];
-            $arrListItems = \preg_split("/\s+|\s*,\s*/", $strListItems);
+            $arrListItems = $arrMatchShortcode['items'];
         ?><li><?=$arrMatchShortcode['shortcode']?><?php
           ?><ul style='margin-left:1rem;'><?php
               foreach ($arrListItems as $strListItem) {
