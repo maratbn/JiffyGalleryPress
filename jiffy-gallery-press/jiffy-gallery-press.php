@@ -323,11 +323,32 @@ function renderPageInfoSettings() {
   ?><ul><?php
     while ($w_p_query->have_posts()) {
         $w_p_query->the_post();
-        if (!\has_shortcode($post->post_content, SHORTCODE__JIFFY_GALLERY_PRESS)) continue;
+
+        $strContent = $post->post_content;
+
+        if (!\has_shortcode($strContent, SHORTCODE__JIFFY_GALLERY_PRESS)) continue;
 
     ?><li><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
         ?><?=$post->post_name?><?php
-      ?></a></li><?php
+      ?></a><?php
+
+        $arrMatchesShortcode = array();
+
+        \preg_match_all("/[\[]\s*jiffy-gallery-press\s+items\s*=\s*[\'\"]\s*([^\s\'\"]+\s*(?:,?\s*[^\s\'\"]+)*)\s*[\'\"]\s*\]/i",
+                        $strContent,
+                        $arrMatchesShortcode,
+                        \PREG_SET_ORDER);
+
+        foreach ($arrMatchesShortcode as $arrMatchShortcode) {
+            $strListItems = $arrMatchShortcode[1];
+            $arrListItems = \preg_split("/\s+|\s*,\s*/", $strListItems);
+        ?><ul><?php
+            foreach ($arrListItems as $strListItem) {
+            ?><li><?=$strListItem?></li><?php
+            }
+        ?></ul><?php
+        }
+    ?></li><?php
     }
   ?><ul><?php
 ?></div><?php
