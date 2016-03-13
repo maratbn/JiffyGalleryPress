@@ -88,6 +88,17 @@ function _get(&$var, $default = null) {
     return isset($var) ? $var : $default;
 }
 
+function _getMatchesInContent($strContent) {
+    $arrMatchesShortcode = array();
+
+    \preg_match_all("/[\[]\s*jiffy-gallery-press\s+items\s*=\s*[\'\"]\s*([^\s\'\"]+\s*(?:,?\s*[^\s\'\"]+)*)\s*[\'\"]\s*\]/i",
+                    $strContent,
+                    $arrMatchesShortcode,
+                    \PREG_SET_ORDER);
+
+    return $arrMatchesShortcode;
+}
+
 function _getPostForImageByName($strName) {
     if ($strName == null) return null;
 
@@ -341,12 +352,8 @@ function renderPageInfoSettings() {
         ?><?=$post->post_name?><?php
       ?></a><?php
 
-        $arrMatchesShortcode = array();
+        $arrMatchesShortcode = _getMatchesInContent($strContent);
 
-        \preg_match_all("/[\[]\s*jiffy-gallery-press\s+items\s*=\s*[\'\"]\s*([^\s\'\"]+\s*(?:,?\s*[^\s\'\"]+)*)\s*[\'\"]\s*\]/i",
-                        $strContent,
-                        $arrMatchesShortcode,
-                        \PREG_SET_ORDER);
       ?><ul style='margin-left:1rem;'><?php
 
         foreach ($arrMatchesShortcode as $arrMatchShortcode) {
