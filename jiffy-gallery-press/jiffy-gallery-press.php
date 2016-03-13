@@ -351,10 +351,8 @@ function renderPageInfoSettings() {
     ?><li><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
         ?><?=$post->post_name?><?php
       ?></a><?php
-
-        $arrMatchesShortcode = _getMatchesInContent($strContent);
-
       ?><ul style='margin-left:1rem;'><?php
+        $arrMatchesShortcode = _getMatchesInContent($strContent);
 
         foreach ($arrMatchesShortcode as $arrMatchShortcode) {
             $strListItems = $arrMatchShortcode[1];
