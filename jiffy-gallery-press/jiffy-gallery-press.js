@@ -34,7 +34,8 @@
 function JiffyGalleryPressLightbox(params) {
 
     var $         = params.$,
-        ajax_url  = params.ajax_url;
+        ajax_url  = params.ajax_url,
+        objTitles = params.titles;
 
 
     function _getSegment(arrHashSegments, regexSegmentFind) {
@@ -116,7 +117,10 @@ function JiffyGalleryPressLightbox(params) {
                                 .appendTo($divPhotoC);
 
 
-    var $aPrev      = $('<a>').css({'margin':              '0 10px',
+    var $divTitle   = $('<div>').css({'color':             'white'})
+                                .appendTo($divBrowser),
+
+        $aPrev      = $('<a>').css({'margin':              '0 10px',
                                     'color':               'white',
                                     'text-decoration':     'none'})
                               .text("< Prev")
@@ -170,6 +174,8 @@ function JiffyGalleryPressLightbox(params) {
                                         + idImage
                                         + '&width=' + $window.width()
                                         + '&height=' + $window.height() + ')');
+
+        $divTitle.text(objTitles[idImage] || "");
 
         var posPrev = objBrowseInfo.pos - 1;
         if (posPrev < 0) posPrev = objBrowseInfo.items.length - 1;
