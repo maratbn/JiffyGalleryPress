@@ -241,6 +241,9 @@ function action__wp_enqueue_scripts() {
 }
 
 function action__wp_print_footer_scripts() {
+    global $post;
+    $strContent = $post->post_content;
+    if (!\has_shortcode($strContent, SHORTCODE__JIFFY_GALLERY_PRESS)) return;
 ?>
 <script type='text/javascript'>
     jQuery(document).ready(function($) {
