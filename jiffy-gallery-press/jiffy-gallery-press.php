@@ -342,7 +342,7 @@ function renderPageInfoSettings() {
         foreach ($arrMatchesShortcode as $arrMatchShortcode) {
             $strListItems = $arrMatchShortcode[1];
             $arrListItems = \preg_split("/\s+|\s*,\s*/", $strListItems);
-        ?><ul><?php
+        ?><ul style='margin-left:1rem;'><?php
             foreach ($arrListItems as $strListItem) {
             ?><li><?=$strListItem?></li><?php
             }
