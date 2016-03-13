@@ -91,10 +91,11 @@ function _get(&$var, $default = null) {
 function _getMatchesInContent($strContent) {
     $arrMatchesShortcode = array();
 
-    \preg_match_all("/[\[]\s*jiffy-gallery-press\s+items\s*=\s*[\'\"]\s*([^\s\'\"]+\s*(?:,?\s*[^\s\'\"]+)*)\s*[\'\"]\s*\]/i",
-                    $strContent,
-                    $arrMatchesShortcode,
-                    \PREG_SET_ORDER);
+    \preg_match_all(
+        "/[\[]\s*jiffy-gallery-press\s+items\s*=\s*[\'\"]\s*([^\s\'\"]+\s*(?:,?\s*[^\s\'\"]+)*)\s*[\'\"]\s*\]/i",
+        $strContent,
+        $arrMatchesShortcode,
+        \PREG_SET_ORDER);
 
     return $arrMatchesShortcode;
 }
