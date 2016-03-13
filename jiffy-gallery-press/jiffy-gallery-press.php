@@ -296,7 +296,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
                          '\'>',
                   '<img',
                     ' class=\'jiffy-gallery-press--thumbnail\'',
-                    ' src=\'', $objThumbnail['url'], '\'',
+                    ' src=\'', \esc_url_raw($objThumbnail['url']), '\'',
                   '>',
                 '</a>')));
     }
