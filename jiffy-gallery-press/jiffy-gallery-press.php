@@ -287,6 +287,8 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
     for ($i = 0; $i < $totalThumbnails; $i++) {
         $objThumbnail = $arrDataThumbnails[$i];
 
+        $strTitleEsc = \esc_attr($objThumbnail['title']);
+
         \array_push(
             $arrOutputThumbnails,
             \implode(array(
@@ -298,7 +300,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
                   '<img',
                     ' class=\'jiffy-gallery-press--thumbnail\'',
                     ' src=\'', \esc_url_raw($objThumbnail['url']), '\'',
-                    ' alt=\'', \esc_attr($objThumbnail['title']), '\'',
+                    ' alt=\'', $strTitleEsc, '\'',
                   '>',
                 '</a>')));
     }
