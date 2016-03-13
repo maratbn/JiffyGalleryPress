@@ -264,13 +264,34 @@ function action__wp_print_footer_scripts() {
     global $post;
     $strContent = $post->post_content;
     if (!\has_shortcode($strContent, SHORTCODE__JIFFY_GALLERY_PRESS)) return;
+
+    $arrItemsMerged = array();
+    $arrPostTitles = array();
+
+    $arrMatchesShortcode = _getMatchesInContent($strContent);
+    foreach ($arrMatchesShortcode as $arrMatchShortcode) {
+        $arrItems = $arrMatchShortcode['items'];
+
+        foreach ($arrItems as $strItem) {
+            if (!\array_key_exists($strItem, $arrItemsMerged)) {
+                $postItem = _getPostForImageByName($strItem);
+                if (!$postItem) continue;
+
+                $arrItemsMerged[$strItem] = array('id'     => $postItem->ID,
+                                                  'title'  => $postItem->post_title);
+                $arrPostTitles[$postItem->ID] = $postItem->post_title;
+            }
+        }
+    }
 ?>
 <script type='text/javascript'>
     jQuery(document).ready(function($) {
             new JiffyGalleryPressLightbox({
                         ajax_url:  <?=\json_encode(
                                        \wp_make_link_relative(
-                                        \admin_url('admin-ajax.php')))?>, $: $
+                                        \admin_url('admin-ajax.php')))?>, $: $,
+                        titles:    <?=\json_encode($arrPostTitles)?>
+
                     });
         });
 </script>
