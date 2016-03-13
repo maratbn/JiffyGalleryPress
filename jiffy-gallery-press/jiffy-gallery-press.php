@@ -97,7 +97,14 @@ function _getMatchesInContent($strContent) {
         $arrMatchesShortcode,
         \PREG_SET_ORDER);
 
-    return $arrMatchesShortcode;
+    $arrMatches = array();
+
+    foreach ($arrMatchesShortcode as $arrMatchShortcode) {
+        \array_push($arrMatches, array('shortcode'  => $arrMatchShortcode[0],
+                                       'items'      => $arrMatchShortcode[1]));
+    }
+
+    return $arrMatches;
 }
 
 function _getPostForImageByName($strName) {
@@ -356,9 +363,9 @@ function renderPageInfoSettings() {
         $arrMatchesShortcode = _getMatchesInContent($strContent);
 
         foreach ($arrMatchesShortcode as $arrMatchShortcode) {
-            $strListItems = $arrMatchShortcode[1];
+            $strListItems = $arrMatchShortcode['items'];
             $arrListItems = \preg_split("/\s+|\s*,\s*/", $strListItems);
-        ?><li><?=$arrMatchShortcode[0]?><?php
+        ?><li><?=$arrMatchShortcode['shortcode']?><?php
           ?><ul style='margin-left:1rem;'><?php
               foreach ($arrListItems as $strListItem) {
                   $postListItem = _getPostForImageByName($strListItem);
