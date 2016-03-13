@@ -163,9 +163,11 @@ function JiffyGalleryPressLightbox(params) {
         $metaA.appendTo($head);
         $metaV.appendTo($head);
 
+        var idImage = objBrowseInfo.items[objBrowseInfo.pos];
+
         $divPhoto.css('background-image',
                       'url(' + ajax_url + '?action=jiffy_gallery_press__get_image&id='
-                                        + objBrowseInfo.items[objBrowseInfo.pos]
+                                        + idImage
                                         + '&width=' + $window.width()
                                         + '&height=' + $window.height() + ')');
 
