@@ -73,8 +73,10 @@ function JiffyGalleryPressLightbox(params) {
         var strItems = _getSegmentValue(arrHashSegments, /^items=\d+(,\d+)*$/i);
         if (!strItems) return null;
 
+        var arrItems = strItems.split(',');
+
         return {pos:    _getSegmentValue(arrHashSegments, /^pos=\d+$/i) || 0,
-                items:  strItems.split(',')};
+                items:  arrItems};
     }
 
 
