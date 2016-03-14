@@ -76,8 +76,16 @@ function JiffyGalleryPressLightbox(params) {
         var arrItems  = strItems.split(','),
             pos       = _getSegmentValue(arrHashSegments, /^pos=\d+$/i) || 0;
 
-        return {pos:    pos,
-                items:  arrItems};
+        var posPrev = pos - 1;
+        if (posPrev < 0) posPrev = arrItems.length - 1;
+
+        var posNext = window.parseInt(pos) + 1;
+        if (posNext >= arrItems.length) posNext = 0;
+
+        return {pos:       pos,
+                pos_next:  posNext,
+                pos_prev:  posPrev,
+                items:     arrItems};
     }
 
 
@@ -180,16 +188,10 @@ function JiffyGalleryPressLightbox(params) {
 
         $divTitle.text(objTitles[idImage] || "");
 
-        var posPrev = objBrowseInfo.pos - 1;
-        if (posPrev < 0) posPrev = objBrowseInfo.items.length - 1;
-
-        var posNext = window.parseInt(objBrowseInfo.pos) + 1;
-        if (posNext >= objBrowseInfo.items.length) posNext = 0;
-
         var strItemIDs = objBrowseInfo.items.join(',');
 
-        $aPrev.attr('href', '#jgp_closeup&pos=' + posPrev + '&items=' + strItemIDs);
-        $aNext.attr('href', '#jgp_closeup&pos=' + posNext + '&items=' + strItemIDs);
+        $aPrev.attr('href', '#jgp_closeup&pos=' + objBrowseInfo.pos_prev + '&items=' + strItemIDs);
+        $aNext.attr('href', '#jgp_closeup&pos=' + objBrowseInfo.pos_next + '&items=' + strItemIDs);
     }
     _processUrlFragment();
     $window.on('hashchange', _processUrlFragment);
