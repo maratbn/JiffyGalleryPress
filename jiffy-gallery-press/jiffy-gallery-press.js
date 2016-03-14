@@ -194,33 +194,36 @@ function JiffyGalleryPressLightbox(params) {
         $aNext.attr('href', objBrowseInfo.frag_next);
     }
 
-    $aNext.click(function(event) {
-            if (!window.history ||
-                !window.history.replaceState) return;
+    function _processLinkClickNext(event) {
+        if (!window.history ||
+            !window.history.replaceState) return;
 
-            var objBrowseInfo = _getBrowseInfo();
-            if (!objBrowseInfo) return;
+        var objBrowseInfo = _getBrowseInfo();
+        if (!objBrowseInfo) return;
 
-            event.preventDefault();
+        event.preventDefault();
 
-            window.history.replaceState(null, null, objBrowseInfo.frag_next);
+        window.history.replaceState(null, null, objBrowseInfo.frag_next);
 
-            _updateCloseup(_getBrowseInfo());
-        });
+        _updateCloseup(_getBrowseInfo());
+    }
 
-    $aPrev.click(function(event) {
-            if (!window.history ||
-                !window.history.replaceState) return;
+    function _processLinkClickPrev(event) {
+        if (!window.history ||
+            !window.history.replaceState) return;
 
-            var objBrowseInfo = _getBrowseInfo();
-            if (!objBrowseInfo) return;
+        var objBrowseInfo = _getBrowseInfo();
+        if (!objBrowseInfo) return;
 
-            event.preventDefault();
+        event.preventDefault();
 
-            window.history.replaceState(null, null, objBrowseInfo.frag_prev);
+        window.history.replaceState(null, null, objBrowseInfo.frag_prev);
 
-            _updateCloseup(_getBrowseInfo());
-        });
+        _updateCloseup(_getBrowseInfo());
+    }
+
+    $aNext.click(_processLinkClickNext);
+    $aPrev.click(_processLinkClickPrev);
 
     function _processUrlFragment() {
         _updateCloseup(_getBrowseInfo());
