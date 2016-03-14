@@ -84,12 +84,12 @@ function JiffyGalleryPressLightbox(params) {
 
         var strItemIDs = arrItems.join(',');
 
-        return {frag_next: '#jgp_closeup&pos=' + posNext + '&items=' + strItemIDs,
-                frag_prev: '#jgp_closeup&pos=' + posPrev + '&items=' + strItemIDs,
-                pos:       pos,
-                pos_next:  posNext,
-                pos_prev:  posPrev,
-                items:     arrItems};
+        return {frag_next:  '#jgp_closeup&pos=' + posNext + '&items=' + strItemIDs,
+                frag_prev:  '#jgp_closeup&pos=' + posPrev + '&items=' + strItemIDs,
+                pos:        pos,
+                pos_next:   posNext,
+                pos_prev:   posPrev,
+                items:      arrItems};
     }
 
 
