@@ -165,9 +165,7 @@ function JiffyGalleryPressLightbox(params) {
                                         'content':         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'});
 
 
-    function _processUrlFragment() {
-        var objBrowseInfo = _getBrowseInfo();
-
+    function _updateCloseup(objBrowseInfo) {
         var strDisplay = objBrowseInfo ? "" : 'none';
 
         $divScreen.css('display', strDisplay);
@@ -194,6 +192,10 @@ function JiffyGalleryPressLightbox(params) {
 
         $aPrev.attr('href', objBrowseInfo.frag_prev);
         $aNext.attr('href', objBrowseInfo.frag_next);
+    }
+
+    function _processUrlFragment() {
+        _updateCloseup(_getBrowseInfo());
     }
     _processUrlFragment();
     $window.on('hashchange', _processUrlFragment);
