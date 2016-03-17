@@ -242,7 +242,8 @@ Copyright (C) 2012 Adobe Systems Incorporated. All rights reserved.
    limitations under the License.
 -->
 
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
+     width='400' height='400'>
 
   <def>
     <!-- Based on: https://raw.githubusercontent.com/topcoat/icons/master/svg/back.svg -->
