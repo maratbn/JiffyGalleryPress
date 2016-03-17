@@ -247,27 +247,27 @@ Copyright (C) 2012 Adobe Systems Incorporated. All rights reserved.
 
   <def>
     <!-- Based on: https://raw.githubusercontent.com/topcoat/icons/master/svg/back.svg -->
-    <polygon id='prev'
+    <polygon id='prev_2'
              fill-rule="evenodd" points="27.066,1 7,21.068 26.568,40.637 31.502,35.704 16.865,21.068 32,5.933 "
              stroke='black' stroke-width='3' transform='scale(2)' />
 
 
-    <use id='prev_white' xlink:href='#prev' fill='white' />
-    <use id='prev_red' xlink:href='#prev' fill='red' />
+    <use id='prev_2_white' xlink:href='#prev_2' fill='white' />
+    <use id='prev_2_red' xlink:href='#prev_2' fill='red' />
 
 
     <!-- Based on: https://raw.githubusercontent.com/topcoat/icons/master/svg/next.svg -->
-    <polygon id='next'
+    <polygon id='next_2'
              fill-rule="evenodd" points="13.933,1 34,21.068 14.431,40.637 9.498,35.704 24.136,21.068 9,5.933 "
              stroke='black' stroke-width='3' transform='scale(2)' />
 
 
-    <use id='next_white' xlink:href='#next' fill='white' />
-    <use id='next_red' xlink:href='#next' fill='red' />
+    <use id='next_2_white' xlink:href='#next_2' fill='white' />
+    <use id='next_2_red' xlink:href='#next_2' fill='red' />
 
 
     <!-- Based on: https://raw.githubusercontent.com/topcoat/icons/master/svg/cancel.svg -->
-    <path id='close'
+    <path id='close_2'
           fill-rule="evenodd"
           d="M21.002,26.588l10.357,10.604c1.039,1.072,1.715,1.083,2.773,0l2.078-2.128
              c1.018-1.042,1.087-1.726,0-2.839L25.245,21L36.211,9.775c1.027-1.055,1.047-1.767,0-2.84l-2.078-2.127
@@ -277,13 +277,13 @@ Copyright (C) 2012 Adobe Systems Incorporated. All rights reserved.
           stroke='black' stroke-width='3' transform='scale(2)' />
 
 
-    <use id='close_white' xlink:href='#close' fill='white' />
-    <use id='close_red' xlink:href='#close' fill='red' />
+    <use id='close_2_white' xlink:href='#close_2' fill='white' />
+    <use id='close_2_red' xlink:href='#close_2' fill='red' />
 
 
   </def>
 
-  <use xlink:href='#prev_white' y='5' />        <use xlink:href='#prev_red' x='75' y='5' />
-  <use xlink:href='#next_white' y='100' />      <use xlink:href='#next_red' x='75' y='100' />
-  <use xlink:href='#close_white' y='195' />     <use xlink:href='#close_red' x='75' y='195' />
+  <use xlink:href='#prev_2_white' y='5' />        <use xlink:href='#prev_2_red' x='75' y='5' />
+  <use xlink:href='#next_2_white' y='100' />      <use xlink:href='#next_2_red' x='75' y='100' />
+  <use xlink:href='#close_2_white' y='195' />     <use xlink:href='#close_2_red' x='75' y='195' />
 </svg>
