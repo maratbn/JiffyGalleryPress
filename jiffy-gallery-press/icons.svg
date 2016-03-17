@@ -276,6 +276,10 @@ Copyright (C) 2012 Adobe Systems Incorporated. All rights reserved.
              c1.049,1.083,1.725,1.072,2.773,0L21.002,26.588z"
           stroke='black' stroke-width='3' />
 
+    <use id='close_1.5' xlink:href='#close' transform='scale(1.5)' />
+    <use id='close_1.5_white' xlink:href='#close_1.5' fill='white' />
+    <use id='close_1.5_red' xlink:href='#close_1.5' fill='red' />
+
     <use id='close_2' xlink:href='#close' transform='scale(2)' />
     <use id='close_2_white' xlink:href='#close_2' fill='white' />
     <use id='close_2_red' xlink:href='#close_2' fill='red' />
@@ -286,4 +290,6 @@ Copyright (C) 2012 Adobe Systems Incorporated. All rights reserved.
   <use xlink:href='#prev_2_white' y='5' />        <use xlink:href='#prev_2_red' x='75' y='5' />
   <use xlink:href='#next_2_white' y='100' />      <use xlink:href='#next_2_red' x='75' y='100' />
   <use xlink:href='#close_2_white' y='195' />     <use xlink:href='#close_2_red' x='75' y='195' />
+  <use xlink:href='#close_1.5_white' x='150'
+                                     y='195' />   <use xlink:href='#close_1.5_red' x='225' y='195' />
 </svg>
