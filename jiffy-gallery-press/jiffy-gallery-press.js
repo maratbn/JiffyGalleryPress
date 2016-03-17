@@ -150,25 +150,6 @@ function JiffyGalleryPressLightbox(params) {
     var $divTitle   = $('<div>').css({'color':              'white'})
                                 .appendTo($divBrowser),
 
-        $aPrev      = $('<a>').css({'margin':               '0 10px',
-                                    'color':                'white',
-                                    'text-decoration':      'none'})
-                              .text("< Prev")
-                              .appendTo($divBrowser),
-
-        $aClose     = $('<a>').attr('href', '#jgp_close')
-                              .css({'margin':               '0 10px',
-                                    'color':                'white',
-                                    'text-decoration':      'none'})
-                              .text("Close")
-                              .appendTo($divBrowser),
-
-        $aNext      = $('<a>').css({'margin':               '0 10px',
-                                    'color':                'white',
-                                    'text-decoration':      'none'})
-                              .text("Next >")
-                              .appendTo($divBrowser),
-
         $aIconClose  = $('<a>').attr('href', '#jgp_close')
                                .css({'display':             'block',
                                      'width':               '80px',
@@ -240,9 +221,6 @@ function JiffyGalleryPressLightbox(params) {
 
         $aIconPrev.attr('href', objBrowseInfo.frag_prev);
         $aIconNext.attr('href', objBrowseInfo.frag_next);
-
-        $aPrev.attr('href', objBrowseInfo.frag_prev);
-        $aNext.attr('href', objBrowseInfo.frag_next);
     }
 
     function _processLinkClickNext(event) {
@@ -275,9 +253,6 @@ function JiffyGalleryPressLightbox(params) {
 
     $aIconNext.click(_processLinkClickNext);
     $aIconPrev.click(_processLinkClickPrev);
-
-    $aNext.click(_processLinkClickNext);
-    $aPrev.click(_processLinkClickPrev);
 
     function _processUrlFragment() {
         _updateCloseup(_getBrowseInfo());
