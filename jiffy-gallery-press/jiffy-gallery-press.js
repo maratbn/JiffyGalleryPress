@@ -152,13 +152,14 @@ function JiffyGalleryPressLightbox(params) {
 
         $aIconClose  = $('<a>').attr('href', '#jgp_close')
                                .css({'display':             'block',
-                                     'width':               '80px',
-                                     'height':              '90px',
+                                     'width':               '50px',
+                                     'height':              '60px',
                                      'background-image':    'url(' + url_icons + ')',
-                                     'background-position': '0 -195px',
+                                     'background-position': '-157px -195px',
                                      'background-repeat':   'no-repeat',
                                      'position':            'absolute',
-                                     'top':                 '10px'})
+                                     'top':                 '10px',
+                                     'right':               '10px'})
                                .appendTo($divStripRight),
 
         $aIconNext  = $('<a>').css({'display':              'block',
