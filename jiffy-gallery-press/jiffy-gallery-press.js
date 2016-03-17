@@ -95,92 +95,92 @@ function JiffyGalleryPressLightbox(params) {
 
     var $body = $('body');
 
-    var $divScreen  = $('<div>').css({'position':          'fixed',
-                                      'top':               0,
-                                      'left':              0,
-                                      'bottom':            0,
-                                      'right':             0,
-                                      'background-color':  'black',
-                                      'opacity':           0.95})
+    var $divScreen  = $('<div>').css({'position':           'fixed',
+                                      'top':                0,
+                                      'left':               0,
+                                      'bottom':             0,
+                                      'right':              0,
+                                      'background-color':   'black',
+                                      'opacity':            0.95})
                                 .appendTo($body),
 
-        $divPhotoC  = $('<div>').css({'position':          'fixed',
-                                      'top':               0,
-                                      'left':              0,
-                                      'bottom':            0,
-                                      'right':             0})
+        $divPhotoC  = $('<div>').css({'position':           'fixed',
+                                      'top':                0,
+                                      'left':               0,
+                                      'bottom':             0,
+                                      'right':              0})
                                 .appendTo($body);
 
 
-    var $divPhoto   = $('<div>').css({'width':             '100%',
-                                      'height':            '100%',
+    var $divPhoto   = $('<div>').css({'width':              '100%',
+                                      'height':             '100%',
                                       'background-position':
-                                                           'center center',
-                                      'background-repeat': 'no-repeat',
-                                      'background-size':   'contain'})
+                                                            'center center',
+                                      'background-repeat':  'no-repeat',
+                                      'background-size':    'contain'})
                                 .appendTo($divPhotoC),
 
-        $divBrowser = $('<div>').css({'background-color':  'black',
-                                      'opacity':           '0.7',
-                                      'font-weight':       'bold',
-                                      'position':          'absolute',
-                                      'left':              0,
-                                      'right':             0,
-                                      'bottom':            0,
-                                      'text-align':        'center'
+        $divBrowser = $('<div>').css({'background-color':   'black',
+                                      'opacity':            '0.7',
+                                      'font-weight':        'bold',
+                                      'position':           'absolute',
+                                      'left':               0,
+                                      'right':              0,
+                                      'bottom':             0,
+                                      'text-align':         'center'
                                     })
                                 .appendTo($divPhotoC),
 
-        $aTopPrev   =   $('<a>').css({'display':           'block',
-                                      'background-color':  'black',
-                                      'color':             'white',
-                                      'opacity':           '0.7',
-                                      'font-weight':       'bold',
-                                      'margin':            0,
-                                      'padding':           '0 0.5em 0 0.2em',
-                                      'border-radius':     '0 0 1em 0',
-                                      'text-decoration':   'none',
-                                      'position':          'absolute',
-                                      'top':               0,
-                                      'left':              0})
+        $aTopPrev   =   $('<a>').css({'display':            'block',
+                                      'background-color':   'black',
+                                      'color':              'white',
+                                      'opacity':            '0.7',
+                                      'font-weight':        'bold',
+                                      'margin':             0,
+                                      'padding':            '0 0.5em 0 0.2em',
+                                      'border-radius':      '0 0 1em 0',
+                                      'text-decoration':    'none',
+                                      'position':           'absolute',
+                                      'top':                0,
+                                      'left':               0})
                                 .text("< Prev")
                                 .appendTo($divPhotoC),
 
-        $aTopNext   =   $('<a>').css({'display':           'block',
-                                      'background-color':  'black',
-                                      'color':             'white',
-                                      'opacity':           '0.7',
-                                      'font-weight':       'bold',
-                                      'margin':            0,
-                                      'padding':           '0 0.2em 0 0.5em',
-                                      'border-radius':     '0 0 0 1em',
-                                      'text-decoration':   'none',
-                                      'position':          'absolute',
-                                      'top':               0,
-                                      'right':             0})
+        $aTopNext   =   $('<a>').css({'display':            'block',
+                                      'background-color':   'black',
+                                      'color':              'white',
+                                      'opacity':            '0.7',
+                                      'font-weight':        'bold',
+                                      'margin':             0,
+                                      'padding':            '0 0.2em 0 0.5em',
+                                      'border-radius':      '0 0 0 1em',
+                                      'text-decoration':    'none',
+                                      'position':           'absolute',
+                                      'top':                0,
+                                      'right':              0})
                                 .text("Next >")
                                 .appendTo($divPhotoC);
 
 
-    var $divTitle   = $('<div>').css({'color':             'white'})
+    var $divTitle   = $('<div>').css({'color':              'white'})
                                 .appendTo($divBrowser),
 
-        $aPrev      = $('<a>').css({'margin':              '0 10px',
-                                    'color':               'white',
-                                    'text-decoration':     'none'})
+        $aPrev      = $('<a>').css({'margin':               '0 10px',
+                                    'color':                'white',
+                                    'text-decoration':      'none'})
                               .text("< Prev")
                               .appendTo($divBrowser),
 
         $aClose     = $('<a>').attr('href', '#jgp_close')
-                              .css({'margin':              '0 10px',
-                                    'color':               'white',
-                                    'text-decoration':     'none'})
+                              .css({'margin':               '0 10px',
+                                    'color':                'white',
+                                    'text-decoration':      'none'})
                               .text("Close")
                               .appendTo($divBrowser),
 
-        $aNext      = $('<a>').css({'margin':              '0 10px',
-                                    'color':               'white',
-                                    'text-decoration':     'none'})
+        $aNext      = $('<a>').css({'margin':               '0 10px',
+                                    'color':                'white',
+                                    'text-decoration':      'none'})
                               .text("Next >")
                               .appendTo($divBrowser),
 
@@ -188,11 +188,11 @@ function JiffyGalleryPressLightbox(params) {
 
         $head       = $('head'),
 
-        $metaA      = $('<meta>').attr({'name':            'apple-mobile-web-app-capable',
-                                        'content':         'yes'}),
+        $metaA      = $('<meta>').attr({'name':             'apple-mobile-web-app-capable',
+                                        'content':          'yes'}),
 
-        $metaV      = $('<meta>').attr({'name':            'viewport',
-                                        'content':         'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'});
+        $metaV      = $('<meta>').attr({'name':             'viewport',
+                                        'content':          'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'});
 
 
     function _updateCloseup(objBrowseInfo) {
