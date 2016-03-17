@@ -35,6 +35,7 @@ function JiffyGalleryPressLightbox(params) {
 
     var $         = params.$,
         ajax_url  = params.ajax_url,
+        url_icons = params.url_icons,
         objTitles = params.titles;
 
 
@@ -159,7 +160,21 @@ function JiffyGalleryPressLightbox(params) {
                                       'top':                0,
                                       'right':              0})
                                 .text("Next >")
-                                .appendTo($divPhotoC);
+                                .appendTo($divPhotoC),
+
+        $divStripLeft = $('<div>').css({'position':         'absolute',
+                                        'top':              0,
+                                        'left':             0,
+                                        'bottom':           0,
+                                        'width':            '80px'})
+                                  .appendTo($divPhotoC),
+
+        $divStripRight = $('<div>').css({'position':        'absolute',
+                                         'top':             0,
+                                         'right':           0,
+                                         'bottom':          0,
+                                         'width':           '80px'})
+                                   .appendTo($divPhotoC);
 
 
     var $divTitle   = $('<div>').css({'color':              'white'})
@@ -183,6 +198,28 @@ function JiffyGalleryPressLightbox(params) {
                                     'text-decoration':      'none'})
                               .text("Next >")
                               .appendTo($divBrowser),
+
+        $aIconNext  = $('<a>').css({'display':              'block',
+                                    'width':                '80px',
+                                    'height':               '90px',
+                                    'background-image':     'url(' + url_icons + ')',
+                                    'background-position':  '5px -95px',
+                                    'background-repeat':    'no-repeat',
+                                    'position':             'absolute',
+                                    'top':                  '50%',
+                                    'margin-top':           '-45px'})
+                              .appendTo($divStripRight),
+
+        $aIconPrev  = $('<a>').css({'display':              'block',
+                                    'width':                '80px',
+                                    'height':               '90px',
+                                    'background-image':     'url(' + url_icons + ')',
+                                    'background-position':  '-7px 0px',
+                                    'background-repeat':    'no-repeat',
+                                    'position':             'absolute',
+                                    'top':                  '50%',
+                                    'margin-top':           '-45px'})
+                              .appendTo($divStripLeft),
 
         $window     = $(window),
 
@@ -220,6 +257,9 @@ function JiffyGalleryPressLightbox(params) {
 
         $divTitle.text(objTitles[idImage] || "");
 
+        $aIconPrev.attr('href', objBrowseInfo.frag_prev);
+        $aIconNext.attr('href', objBrowseInfo.frag_next);
+
         $aTopPrev.attr('href', objBrowseInfo.frag_prev);
         $aTopNext.attr('href', objBrowseInfo.frag_next);
 
@@ -254,6 +294,9 @@ function JiffyGalleryPressLightbox(params) {
 
         _updateCloseup(_getBrowseInfo());
     }
+
+    $aIconNext.click(_processLinkClickNext);
+    $aIconPrev.click(_processLinkClickPrev);
 
     $aTopNext.click(_processLinkClickNext);
     $aTopPrev.click(_processLinkClickPrev);
