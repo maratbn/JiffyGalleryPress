@@ -294,7 +294,7 @@ function action__wp_print_footer_scripts() {
 
                         url_icons: <?=\json_encode(
                                        \wp_make_link_relative(
-                                        \plugin_dir_url(__FILE__) . 'icons.svg'))?>
+                                        \plugin_dir_url(__FILE__) . 'icons.svg?' . _getUVArg()))?>
                     });
         });
 </script>
