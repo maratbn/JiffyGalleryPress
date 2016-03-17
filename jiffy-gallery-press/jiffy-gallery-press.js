@@ -132,36 +132,6 @@ function JiffyGalleryPressLightbox(params) {
                                     })
                                 .appendTo($divPhotoC),
 
-        $aTopPrev   =   $('<a>').css({'display':            'block',
-                                      'background-color':   'black',
-                                      'color':              'white',
-                                      'opacity':            '0.7',
-                                      'font-weight':        'bold',
-                                      'margin':             0,
-                                      'padding':            '0 0.5em 0 0.2em',
-                                      'border-radius':      '0 0 1em 0',
-                                      'text-decoration':    'none',
-                                      'position':           'absolute',
-                                      'top':                0,
-                                      'left':               0})
-                                .text("< Prev")
-                                .appendTo($divPhotoC),
-
-        $aTopNext   =   $('<a>').css({'display':            'block',
-                                      'background-color':   'black',
-                                      'color':              'white',
-                                      'opacity':            '0.7',
-                                      'font-weight':        'bold',
-                                      'margin':             0,
-                                      'padding':            '0 0.2em 0 0.5em',
-                                      'border-radius':      '0 0 0 1em',
-                                      'text-decoration':    'none',
-                                      'position':           'absolute',
-                                      'top':                0,
-                                      'right':              0})
-                                .text("Next >")
-                                .appendTo($divPhotoC),
-
         $divStripLeft = $('<div>').css({'position':         'absolute',
                                         'top':              0,
                                         'left':             0,
@@ -271,9 +241,6 @@ function JiffyGalleryPressLightbox(params) {
         $aIconPrev.attr('href', objBrowseInfo.frag_prev);
         $aIconNext.attr('href', objBrowseInfo.frag_next);
 
-        $aTopPrev.attr('href', objBrowseInfo.frag_prev);
-        $aTopNext.attr('href', objBrowseInfo.frag_next);
-
         $aPrev.attr('href', objBrowseInfo.frag_prev);
         $aNext.attr('href', objBrowseInfo.frag_next);
     }
@@ -308,9 +275,6 @@ function JiffyGalleryPressLightbox(params) {
 
     $aIconNext.click(_processLinkClickNext);
     $aIconPrev.click(_processLinkClickPrev);
-
-    $aTopNext.click(_processLinkClickNext);
-    $aTopPrev.click(_processLinkClickPrev);
 
     $aNext.click(_processLinkClickNext);
     $aPrev.click(_processLinkClickPrev);
