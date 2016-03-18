@@ -277,7 +277,11 @@ function action__wp_print_footer_scripts() {
                 $postItem = _getPostForImageByName($strItem);
                 if (!$postItem) continue;
 
-                $strTitleUse = $postItem->post_title;
+                $strTitleUse = $postItem->post_excerpt;
+
+                if (\strlen($strTitleUse) == 0) {
+                    $strTitleUse = $postItem->post_title;
+                }
 
                 $arrItemsMerged[$strItem] = array('id'     => $postItem->ID,
                                                   'title'  => $strTitleUse);
