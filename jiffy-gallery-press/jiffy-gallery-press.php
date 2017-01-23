@@ -142,13 +142,12 @@ function plugin_activation_hook() {
 }
 
 function action__admin_menu() {
-    \add_submenu_page(
-        'tools.php',
-        \__('Jiffy Gallery Press Info / Settings', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS),
-        \__('Jiffy Gallery Press', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS),
-        'manage_options',
-        SLUG_INFO_SETTINGS,
-        '\\plugin_JiffyGalleryPress\\renderPageInfoSettings');
+    \add_options_page(
+                    \__('Jiffy Gallery Press Info / Settings', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS),
+                    \__('Jiffy Gallery Press', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS),
+                    'manage_options',
+                    SLUG_INFO_SETTINGS,
+                    '\\plugin_JiffyGalleryPress\\renderPageInfoSettings');
 }
 
 function action__wp_ajax_jiffy_gallery_press__get_image() {
