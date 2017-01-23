@@ -417,8 +417,11 @@ function renderPageInfoSettings() {
         if (!\has_shortcode($strContent, SHORTCODE__JIFFY_GALLERY_PRESS)) continue;
 
         $totalPostsUsingShortcode++;
+        $strPermalink = \get_permalink($post->ID);
 
     ?><li><?php
+      ?><a href='<?=\esc_url_raw($strPermalink)?>' target='_blank'><?=$strPermalink?></a><?php
+      ?><br><?php
       ?><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
         ?><?=$post->post_name?><?php
       ?></a><?php
