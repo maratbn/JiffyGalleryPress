@@ -394,6 +394,11 @@ function renderPageInfoSettings() {
               '[jiffy-gallery-press items=\'image_slug_1 image_slug_2 image_slug_3\']' .
             '</strong>')?><?php
   ?></p><?php
+  ?><p><?php
+    ?><?=\__('Click on a post URL to view that post (with the gallery), or on the post slug to edit.')?><?php
+    ?>  <?php
+    ?><?=\__('Click on an image slug to go to its \'Edit Media\' page.')?><?php
+  ?></p><?php
 
   ?><h2><?=\__('The following posts are using the Jiffy Gallery Press shortcode:',
                DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h2><?php
