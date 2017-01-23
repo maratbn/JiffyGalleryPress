@@ -436,11 +436,11 @@ function renderPageInfoSettings() {
           $arrMatchesShortcode = _getMatchesInContent($strContent);
 
           foreach ($arrMatchesShortcode as $arrMatchShortcode) {
+              $arrListItems = $arrMatchShortcode['items'];
               $strShortcode = $arrMatchShortcode['shortcode'];
           ?><li><?php
             ?><?=$strShortcode?><?php
             ?><ul style='margin-left:1rem;'><?php
-                $arrListItems = $arrMatchShortcode['items'];
                 foreach ($arrListItems as $strListItem) {
                     $postListItem = _getPostForImageByName($strListItem);
                     if (!$postListItem) continue;
