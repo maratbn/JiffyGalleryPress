@@ -384,6 +384,8 @@ function renderPageInfoSettings() {
   ?><h1><?=\__('Jiffy Gallery Press Info / Settings',
                DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h1><?php
 
+    $totalPostsUsingShortcode = 0;
+
     $w_p_query = new \WP_Query(array('order'           => 'ASC',
                                      'orderby'         => 'name',
                                      'post_status'     => 'any',
@@ -399,6 +401,8 @@ function renderPageInfoSettings() {
         $strContent = $post->post_content;
 
         if (!\has_shortcode($strContent, SHORTCODE__JIFFY_GALLERY_PRESS)) continue;
+
+        $totalPostsUsingShortcode++;
 
     ?><li><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
         ?><?=$post->post_name?><?php
@@ -426,6 +430,11 @@ function renderPageInfoSettings() {
     ?></li><?php
     }
   ?><ul><?php
+
+  if ($totalPostsUsingShortcode == 0) {
+    ?><?=\__('Currently no posts use the Jiffy Gallery Press shortcode.',
+             DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?><?php
+  }
 ?></div><?php
 }
 ?>
