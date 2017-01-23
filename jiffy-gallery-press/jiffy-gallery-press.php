@@ -384,6 +384,9 @@ function renderPageInfoSettings() {
   ?><h1><?=\__('Jiffy Gallery Press Info / Settings',
                DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h1><?php
 
+  ?><h2><?=\__('The following posts are using the Jiffy Gallery Press shortcode:',
+               DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h2><?php
+
     $totalPostsUsingShortcode = 0;
 
     $w_p_query = new \WP_Query(array('order'           => 'ASC',
