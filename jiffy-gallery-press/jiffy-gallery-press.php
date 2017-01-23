@@ -384,6 +384,17 @@ function renderPageInfoSettings() {
   ?><h1><?=\__('Jiffy Gallery Press Info / Settings',
                DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h1><?php
 
+  ?><h2><?=\__('Instructions:',
+               DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h2><?
+  ?><p><?php
+    ?><?=\sprintf(
+            \__('Insert the shortcode %s into any page / post at the position at which you want to display a gallery.',
+                DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS),
+            '<strong>' .
+              '[jiffy-gallery-press items=\'image_slug_1 image_slug_2 image_slug_3\']' .
+            '</strong>')?><?php
+  ?></p><?php
+
   ?><h2><?=\__('The following posts are using the Jiffy Gallery Press shortcode:',
                DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h2><?php
 
