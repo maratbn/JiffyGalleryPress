@@ -1,7 +1,7 @@
 <?php
 /*
   Plugin Name: Jiffy Gallery Press
-  Description: Setup image galleries in a jiffy via shortcodes associated with image slugs, and have the images load in a jiffy by downloading only the minimum size image necessary for the client viewport size.
+  Description: Setup image galleries in a jiffy via shortcodes associated with image slugs, and have the images load in a jiffy by downloading only the minimum size image necessary for the client viewport size.  No locked premium features and tested to work on iOS devices.
   Author: Marat Nepomnyashy
   Author URI: http://www.maratbn.com
   License: GPL3
