@@ -418,7 +418,8 @@ function renderPageInfoSettings() {
 
         $totalPostsUsingShortcode++;
 
-    ?><li><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
+    ?><li><?php
+      ?><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
         ?><?=$post->post_name?><?php
       ?></a><?php
       ?><ul style='margin-left:1rem;'><?php
