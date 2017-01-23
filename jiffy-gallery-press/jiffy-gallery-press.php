@@ -421,7 +421,7 @@ function renderPageInfoSettings() {
 
     ?><li><?php
       ?><h4 style='margin:0'><?=\get_the_title($post->ID)?></h4><?php
-      ?><details><?php
+      ?><details style='display:block;margin-left:1rem'><?php
         ?><a href='<?=\esc_url_raw($strPermalink)?>' target='_blank'><?=$strPermalink?></a><?php
         ?><br><?php
         ?><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
