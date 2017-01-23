@@ -421,31 +421,33 @@ function renderPageInfoSettings() {
 
     ?><li><?php
       ?><h4><?=\get_the_title($post->ID)?></h4><?php
-      ?><a href='<?=\esc_url_raw($strPermalink)?>' target='_blank'><?=$strPermalink?></a><?php
-      ?><br><?php
-      ?><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
-        ?><?=$post->post_name?><?php
-      ?></a><?php
-      ?><ul style='margin-left:1rem;'><?php
-        $arrMatchesShortcode = _getMatchesInContent($strContent);
+      ?><details><?php
+        ?><a href='<?=\esc_url_raw($strPermalink)?>' target='_blank'><?=$strPermalink?></a><?php
+        ?><br><?php
+        ?><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
+          ?><?=$post->post_name?><?php
+        ?></a><?php
+        ?><ul style='margin-left:1rem;'><?php
+          $arrMatchesShortcode = _getMatchesInContent($strContent);
 
-        foreach ($arrMatchesShortcode as $arrMatchShortcode) {
-        ?><li><?=$arrMatchShortcode['shortcode']?><?php
-          ?><ul style='margin-left:1rem;'><?php
-              $arrListItems = $arrMatchShortcode['items'];
-              foreach ($arrListItems as $strListItem) {
-                  $postListItem = _getPostForImageByName($strListItem);
-                  if (!$postListItem) continue;
+          foreach ($arrMatchesShortcode as $arrMatchShortcode) {
+          ?><li><?=$arrMatchShortcode['shortcode']?><?php
+            ?><ul style='margin-left:1rem;'><?php
+                $arrListItems = $arrMatchShortcode['items'];
+                foreach ($arrListItems as $strListItem) {
+                    $postListItem = _getPostForImageByName($strListItem);
+                    if (!$postListItem) continue;
 
-              ?><li><a href='<?=\esc_url_raw(
-                                 \get_edit_post_link($postListItem->ID))?>' target='_blank'><?php
-                  ?><?=$strListItem?><?php
-                ?></a></li><?php
-              }
-          ?></ul><?php
-        ?></li><?php
-        }
-      ?><ul><?php
+                ?><li><a href='<?=\esc_url_raw(
+                                   \get_edit_post_link($postListItem->ID))?>' target='_blank'><?php
+                    ?><?=$strListItem?><?php
+                  ?></a></li><?php
+                }
+            ?></ul><?php
+          ?></li><?php
+          }
+        ?><ul><?php
+      ?></details><?php
     ?></li><?php
     }
   ?><ul><?php
