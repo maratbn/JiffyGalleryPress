@@ -420,7 +420,7 @@ function renderPageInfoSettings() {
         $strPermalink = \get_permalink($post->ID);
 
     ?><li><?php
-      ?><h4><?=\get_the_title($post->ID)?></h4><?php
+      ?><h4 style='margin:0'><?=\get_the_title($post->ID)?></h4><?php
       ?><details><?php
         ?><a href='<?=\esc_url_raw($strPermalink)?>' target='_blank'><?=$strPermalink?></a><?php
         ?><br><?php
