@@ -81,6 +81,9 @@ if (\is_admin()) {
                 '\\plugin_JiffyGalleryPress\\action__admin_menu');
     \add_action('wp_ajax_jiffy_gallery_press__get_image',
                 '\\plugin_JiffyGalleryPress\\action__wp_ajax_jiffy_gallery_press__get_image');
+
+    \add_filter('plugin_action_links_' . \plugin_basename(__FILE__),
+                '\\plugin_JiffyGalleryPress\\filter_plugin_action_links');
 }
 
 
@@ -304,6 +307,17 @@ function action__wp_print_footer_scripts() {
         });
 </script>
 <?php
+}
+
+function filter_plugin_action_links($arrLinks) {
+    \array_push($arrLinks,
+                '<a href=\'' . getUrlSettings() . '\'>'
+                            . \__('Info / Settings', DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS) . '</a>');
+    return $arrLinks;
+}
+
+function getUrlSettings() {
+    return \admin_url('options-general.php?page=' . SLUG_INFO_SETTINGS);
 }
 
 function shortcode__jiffy_gallery_press($arrAttrs) {
