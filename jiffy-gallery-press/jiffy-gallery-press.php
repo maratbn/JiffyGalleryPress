@@ -492,10 +492,11 @@ function renderPageInfoSettings() {
                         ?>height=<?=\round($height * $scale)?>><?php
                       }
 
-                  ?><a href='<?=\esc_url_raw(
+                  ?><div><?php
+                    ?><a href='<?=\esc_url_raw(
                                    \get_edit_post_link($postListItem->ID))?>' target='_blank'><?php
                     ?><?=$strListItem?><?php
-                  ?></a></li><?php
+                  ?></a></div></li><?php
                 }
             ?></ul><?php
           ?></li><?php
