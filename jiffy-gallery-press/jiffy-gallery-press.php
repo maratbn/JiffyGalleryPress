@@ -106,8 +106,8 @@ function _getMatchesInContent($strContent) {
         $strShortcode = $arrMatchShortcode[0];
         $strItems = $arrMatchShortcode[1];
 
-        \array_push($arrMatches, array('shortcode'  => $strShortcode,
-                                       'items'      => \preg_split("/\s+|\s*,\s*/", $strItems)));
+        \array_push($arrMatches, array('shortcode'    => $strShortcode,
+                                       'items'        => \preg_split("/\s+|\s*,\s*/", $strItems)));
     }
 
     return $arrMatches;
