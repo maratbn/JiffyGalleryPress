@@ -257,6 +257,10 @@ function action__wp_ajax_jiffy_gallery_press__get_image() {
 }
 
 function action__wp_enqueue_scripts() {
+    global $post;
+    $strContent = $post->post_content;
+    if (!\has_shortcode($strContent, SHORTCODE__JIFFY_GALLERY_PRESS)) return;
+
     \wp_enqueue_script('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_js',
                        \plugin_dir_url(__FILE__) . '/jiffy-gallery-press.js',
                        array('jquery'),
