@@ -107,7 +107,9 @@ function _getMatchesInContent($strContent) {
         $strItems = $arrMatchShortcode[1];
 
         \array_push($arrMatches, array('shortcode'    => $strShortcode,
-                                       'items'        => \preg_split("/\s+|\s*,\s*/", $strItems)));
+                                       'items'        => \preg_split("/\s+|\s*,\s*/", $strItems),
+                                       'indexItems'   => \strpos($strShortcode, $strItems),
+                                       'lengthItems'  => \strlen($strItems)));
     }
 
     return $arrMatches;
@@ -439,7 +441,27 @@ function renderPageInfoSettings() {
 
           foreach ($arrMatchesShortcode as $arrMatchShortcode) {
               $arrListItems = $arrMatchShortcode['items'];
+              $indexItems   = $arrMatchShortcode['indexItems'];
               $strShortcode = $arrMatchShortcode['shortcode'];
+
+              foreach ($arrListItems as $strListItem) {
+                  $indexItem = \strpos($strShortcode, $strListItem, $indexItems);
+
+                  $postListItem = _getPostForImageByName($strListItem);
+
+                  $strListItemReplace = $postListItem
+                                      ? '<a href=\'' . \esc_url_raw(
+                                                        \get_edit_post_link($postListItem->ID))
+                                                     . '\' target=\'_blank\'>' .
+                                          $strListItem .
+                                        '</a>'
+                                      : '<font color=\'red\'>' . $strListItem . '</font>';
+
+                  $strShortcode = \substr_replace($strShortcode,
+                                                  $strListItemReplace,
+                                                  $indexItem,
+                                                  \strlen($strListItem));
+              }
           ?><li><?php
             ?><?=$strShortcode?><?php
             ?><ul style='margin-left:1rem;'><?php
