@@ -469,7 +469,8 @@ function renderPageInfoSettings() {
                     $postListItem = _getPostForImageByName($strListItem);
                     if (!$postListItem) continue;
 
-                ?><li><a href='<?=\esc_url_raw(
+                ?><li><?php
+                  ?><a href='<?=\esc_url_raw(
                                    \get_edit_post_link($postListItem->ID))?>' target='_blank'><?php
                     ?><?=$strListItem?><?php
                   ?></a></li><?php
