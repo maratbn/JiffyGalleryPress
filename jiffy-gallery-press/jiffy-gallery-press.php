@@ -60,6 +60,8 @@ const SLUG_INFO_SETTINGS = 'plugin_JiffyGalleryPress_admin';
 
 const SHORTCODE__JIFFY_GALLERY_PRESS = 'jiffy-gallery-press';
 
+const ADMIN_THUMB_SIZE = 64;
+
 
 \register_activation_hook(__FILE__, '\\plugin_JiffyGalleryPress\\plugin_activation_hook');
 
@@ -470,6 +472,22 @@ function renderPageInfoSettings() {
                     if (!$postListItem) continue;
 
                 ?><li><?php
+
+                      $objImage = \wp_get_attachment_image_src($postListItem->ID,
+                                                               array(ADMIN_THUMB_SIZE,
+                                                                     ADMIN_THUMB_SIZE),
+                                                               true);
+                      $urlImage = $objImage ? $objImage[0] : null;
+                      if ($urlImage) {
+                          $width   = $objImage[1];
+                          $height  = $objImage[2];
+                          $scale   = $width > $height ? ADMIN_THUMB_SIZE / $width
+                                                      : ADMIN_THUMB_SIZE / $height;
+                      ?><img src='<?=$urlImage?>'<?php
+                        ?>width=<?=\round($width * $scale)?> <?php
+                        ?>height=<?=\round($height * $scale)?>><?php
+                      }
+
                   ?><a href='<?=\esc_url_raw(
                                    \get_edit_post_link($postListItem->ID))?>' target='_blank'><?php
                     ?><?=$strListItem?><?php
