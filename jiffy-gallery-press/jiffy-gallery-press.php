@@ -178,6 +178,15 @@ function action__admin_print_footer_scripts() {
         div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery {
             margin-left:                1rem;
         }
+
+        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery {
+            display:                    flex;
+            flex-wrap:                  wrap;
+        }
+
+        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li {
+            margin:                     1rem;
+        }
     </style><?php
 }
 
