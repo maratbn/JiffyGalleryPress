@@ -483,9 +483,9 @@ function renderPageInfoSettings() {
           $arrMatchesShortcode = _getMatchesInContent($strContent);
 
           foreach ($arrMatchesShortcode as $arrMatchShortcode) {
-              $arrListItems = $arrMatchShortcode['items'];
-              $indexItems   = $arrMatchShortcode['indexItems'];
-              $strShortcode = $arrMatchShortcode['shortcode'];
+              $arrListItems      = $arrMatchShortcode['items'];
+              $indexItems        = $arrMatchShortcode['indexItems'];
+              $strShortcode      = $arrMatchShortcode['shortcode'];
 
               foreach ($arrListItems as $strListItem) {
                   $indexItem = \strpos($strShortcode, $strListItem, $indexItems);
