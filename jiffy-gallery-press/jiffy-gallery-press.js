@@ -414,6 +414,11 @@ function JiffyGalleryPressLightbox(params) {
 
 
     function _updateCloseup(objBrowseInfo) {
+        var $wpadminbar = $('#wpadminbar');
+        if ($wpadminbar) {
+            $wpadminbar.css('display', objBrowseInfo ? 'none' : "");
+        }
+
         var strDisplay = objBrowseInfo ? "" : 'none';
 
         $divScreen.css('display', strDisplay);
