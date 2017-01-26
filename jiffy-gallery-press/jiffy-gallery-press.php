@@ -506,7 +506,7 @@ function renderPageInfoSettings() {
                                                   \strlen($strListItem));
               }
           ?><li><?php
-            ?><?=$strShortcode?><?php
+            ?><strong><?=$strShortcode?></strong><?php
             ?><ul class='jgp_gallery'><?php
                 foreach ($arrListItems as $strListItem) {
                     $postListItem = _getPostForImageByName($strListItem);
