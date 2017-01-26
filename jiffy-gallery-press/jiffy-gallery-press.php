@@ -171,9 +171,9 @@ function action__admin_print_footer_scripts() {
 
         div.jiffy_gallery_press__settings details.jgp_post {
             display:                    block;
-            margin-left:                1rem;
         }
 
+        div.jiffy_gallery_press__settings details.jgp_post,
         div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes {
             margin-left:                1rem;
         }
