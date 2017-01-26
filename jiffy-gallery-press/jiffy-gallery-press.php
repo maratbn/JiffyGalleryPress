@@ -173,6 +173,10 @@ function action__admin_print_footer_scripts() {
             display:                    block;
             margin-left:                1rem;
         }
+
+        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes {
+            margin-left:                1rem;
+        }
     </style><?php
 }
 
@@ -459,7 +463,7 @@ function renderPageInfoSettings() {
         ?><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
           ?><?=$post->post_name?><?php
         ?></a><?php
-        ?><ul style='margin-left:1rem;'><?php
+        ?><ul class='jgp_shortcodes'><?php
           $arrMatchesShortcode = _getMatchesInContent($strContent);
 
           foreach ($arrMatchesShortcode as $arrMatchShortcode) {
