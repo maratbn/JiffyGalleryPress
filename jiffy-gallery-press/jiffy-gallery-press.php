@@ -165,6 +165,10 @@ function action__admin_print_footer_scripts() {
     $current_screen = \get_current_screen();
     if ($current_screen->base != 'settings_page_' . SLUG_INFO_SETTINGS) return;
     ?><style>
+        div.jiffy_gallery_press__settings h4.jgp_post {
+            margin:                     0;
+        }
+
         div.jiffy_gallery_press__settings details.jgp_post {
             display:                    block;
             margin-left:                1rem;
@@ -448,7 +452,7 @@ function renderPageInfoSettings() {
         $strPermalink = \get_permalink($post->ID);
 
     ?><li><?php
-      ?><h4 style='margin:0'><?=\get_the_title($post->ID)?></h4><?php
+      ?><h4 class='jgp_post'><?=\get_the_title($post->ID)?></h4><?php
       ?><details class='jgp_post'><?php
         ?><a href='<?=\esc_url_raw($strPermalink)?>' target='_blank'><?=$strPermalink?></a><?php
         ?><br><?php
