@@ -187,6 +187,12 @@ function action__admin_print_footer_scripts() {
         div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li {
             margin:                     1rem;
         }
+
+        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li img.jgp_thumbnail {
+            border:                     1px solid black;
+            border-radius:              0.3rem;
+            padding:                    1px;
+        }
     </style><?php
 }
 
@@ -518,7 +524,7 @@ function renderPageInfoSettings() {
                           $height  = $objImage[2];
                           $scale   = $width > $height ? ADMIN_THUMB_SIZE / $width
                                                       : ADMIN_THUMB_SIZE / $height;
-                      ?><img src='<?=$urlImage?>'<?php
+                      ?><img class='jgp_thumbnail' src='<?=$urlImage?>'<?php
                         ?>width=<?=\round($width * $scale)?> <?php
                         ?>height=<?=\round($height * $scale)?>><?php
                       }
