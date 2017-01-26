@@ -174,7 +174,8 @@ function action__admin_print_footer_scripts() {
         }
 
         div.jiffy_gallery_press__settings details.jgp_post,
-        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes {
+        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes,
+        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery {
             margin-left:                1rem;
         }
     </style><?php
@@ -491,7 +492,7 @@ function renderPageInfoSettings() {
               }
           ?><li><?php
             ?><?=$strShortcode?><?php
-            ?><ul style='margin-left:1rem;'><?php
+            ?><ul class='jgp_gallery'><?php
                 foreach ($arrListItems as $strListItem) {
                     $postListItem = _getPostForImageByName($strListItem);
                     if (!$postListItem) continue;
