@@ -509,7 +509,9 @@ function renderPageInfoSettings() {
           ?><li><?php
             ?><strong><?=$strShortcode?></strong><?php
             ?><ul class='jgp_gallery'><?php
-                foreach ($arrListItems as $strListItem) {
+                $totalListItems = \count($arrListItems);
+                for ($i = 0; $i < $totalListItems; $i++) {
+                    $strListItem = $arrListItems[$i];
                     $postListItem = _getPostForImageByName($strListItem);
                     if (!$postListItem) continue;
 
