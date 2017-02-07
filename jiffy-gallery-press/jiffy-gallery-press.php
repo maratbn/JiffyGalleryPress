@@ -169,26 +169,26 @@ function action__admin_print_footer_scripts() {
             margin:                     0;
         }
 
-        div.jiffy_gallery_press__settings details.jgp_post {
+        div.jiffy_gallery_press__settings div.jgp_post {
             display:                    block;
         }
 
-        div.jiffy_gallery_press__settings details.jgp_post,
-        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes,
-        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery {
+        div.jiffy_gallery_press__settings div.jgp_post,
+        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes,
+        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery {
             margin-left:                1rem;
         }
 
-        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery {
+        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery {
             display:                    flex;
             flex-wrap:                  wrap;
         }
 
-        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li {
+        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li {
             margin:                     1rem;
         }
 
-        div.jiffy_gallery_press__settings details.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li img.jgp_thumbnail {
+        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li img.jgp_thumbnail {
             border:                     1px solid black;
             border-radius:              0.3rem;
             padding:                    1px;
@@ -473,7 +473,7 @@ function renderPageInfoSettings() {
 
     ?><li><?php
       ?><h4 class='jgp_post'><?=\get_the_title($post->ID)?></h4><?php
-      ?><details class='jgp_post'><?php
+      ?><div class='jgp_post'><?php
         ?><a href='<?=\esc_url_raw($strPermalink)?>' target='_blank'><?=$strPermalink?></a><?php
         ?><br><?php
         ?><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
@@ -539,7 +539,7 @@ function renderPageInfoSettings() {
           ?></li><?php
           }
         ?><ul><?php
-      ?></details><?php
+      ?></div><?php
     ?></li><?php
     }
   ?><ul><?php
