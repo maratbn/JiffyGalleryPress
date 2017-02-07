@@ -192,6 +192,7 @@ function action__admin_print_footer_scripts() {
             border:                     1px solid black;
             border-radius:              0.3rem;
             padding:                    1px;
+            vertical-align:             top;
         }
     </style><?php
 }
