@@ -79,6 +79,8 @@ const ADMIN_THUMB_SIZE = 64;
 
 
 if (\is_admin()) {
+    \add_action('admin_enqueue_scripts',
+                '\\plugin_JiffyGalleryPress\\action__admin_enqueue_scripts');
     \add_action('admin_menu',
                 '\\plugin_JiffyGalleryPress\\action__admin_menu');
     \add_action('admin_print_footer_scripts',
@@ -150,6 +152,13 @@ function plugin_activation_hook() {
                 PHP_VERSION_MIN_SUPPORTED,
                 PHP_VERSION_MIN_SUPPORTED));
     }
+}
+
+function action__admin_enqueue_scripts() {
+    $current_screen = \get_current_screen();
+    if ($current_screen->base != 'settings_page_' . SLUG_INFO_SETTINGS) return;
+
+    doEnqueueScripts();
 }
 
 function action__admin_menu() {
