@@ -323,11 +323,7 @@ function action__wp_print_footer_scripts() {
                 $postItem = _getPostForImageByName($strItem);
                 if (!$postItem) continue;
 
-                $strTitleUse = $postItem->post_excerpt;
-
-                if (\strlen($strTitleUse) == 0) {
-                    $strTitleUse = $postItem->post_title;
-                }
+                $strTitleUse = getPostTitle($postItem);
 
                 $arrItemsMerged[$strItem] = array('id'     => $postItem->ID,
                                                   'title'  => $strTitleUse);
@@ -337,6 +333,16 @@ function action__wp_print_footer_scripts() {
     }
 
     printSegmentJS($arrPostTitles);
+}
+
+function getPostTitle($post) {
+    $strTitleUse = $post->post_excerpt;
+
+    if (\strlen($strTitleUse) == 0) {
+        $strTitleUse = $post->post_title;
+    }
+
+    return $strTitleUse;
 }
 
 function doEnqueueScripts() {
