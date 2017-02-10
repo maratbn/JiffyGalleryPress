@@ -194,7 +194,6 @@ function action__admin_print_footer_scripts() {
         div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li a.jgp_thumbnail {
             display:                    inline-block;
             border-radius:              0.3rem;
-            overflow:                   hidden;
         }
 
         div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li img.jgp_thumbnail {
