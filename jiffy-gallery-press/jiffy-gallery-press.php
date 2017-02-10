@@ -188,6 +188,10 @@ function action__admin_print_footer_scripts() {
             margin:                     1rem;
         }
 
+        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li a.jgp_thumbnail {
+            display:                    inline-block;
+        }
+
         div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li img.jgp_thumbnail {
             border:                     1px solid black;
             border-radius:              0.3rem;
@@ -484,6 +488,7 @@ function renderPageInfoSettings() {
           $arrMatchesShortcode = _getMatchesInContent($strContent);
 
           foreach ($arrMatchesShortcode as $arrMatchShortcode) {
+              $arrIDsThumbnails  = array();
               $arrListItems      = $arrMatchShortcode['items'];
               $indexItems        = $arrMatchShortcode['indexItems'];
               $strShortcode      = $arrMatchShortcode['shortcode'];
@@ -492,6 +497,8 @@ function renderPageInfoSettings() {
                   $indexItem = \strpos($strShortcode, $strListItem, $indexItems);
 
                   $postListItem = _getPostForImageByName($strListItem);
+
+                  \array_push($arrIDsThumbnails, $postListItem->ID);
 
                   $strListItemReplace = $postListItem
                                       ? '<a href=\'' . \esc_url_raw(
@@ -509,6 +516,7 @@ function renderPageInfoSettings() {
           ?><li><?php
             ?><strong><?=$strShortcode?></strong><?php
             ?><ul class='jgp_gallery'><?php
+                $strIDsThumbnails = \implode($arrIDsThumbnails, ',');
                 $totalListItems = \count($arrListItems);
                 for ($i = 0; $i < $totalListItems; $i++) {
                     $strListItem = $arrListItems[$i];
@@ -527,9 +535,11 @@ function renderPageInfoSettings() {
                           $height  = $objImage[2];
                           $scale   = $width > $height ? ADMIN_THUMB_SIZE / $width
                                                       : ADMIN_THUMB_SIZE / $height;
-                      ?><img class='jgp_thumbnail' src='<?=$urlImage?>'<?php
-                        ?> width=<?=\round($width * $scale)?><?php
-                        ?> height=<?=\round($height * $scale)?>><?php
+                      ?><a class='jgp_thumbnail'<?php
+                        ?> href='#jgp_closeup&pos=<?=$i?>&items=<?=$strIDsThumbnails?>'><?php
+                        ?><img class='jgp_thumbnail' src='<?=$urlImage?>'<?php
+                          ?> width=<?=\round($width * $scale)?><?php
+                          ?> height=<?=\round($height * $scale)?>></a><?php
                       }
 
                   ?><div><?php
