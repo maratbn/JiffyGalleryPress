@@ -335,22 +335,8 @@ function action__wp_print_footer_scripts() {
             }
         }
     }
-?>
-<script type='text/javascript'>
-    jQuery(document).ready(function($) {
-            new JiffyGalleryPressLightbox({
-                        ajax_url:  <?=\json_encode(
-                                       \wp_make_link_relative(
-                                        \admin_url('admin-ajax.php')))?>, $: $,
-                        titles:    <?=\json_encode($arrPostTitles)?>,
 
-                        url_icons: <?=\json_encode(
-                                       \wp_make_link_relative(
-                                        \plugin_dir_url(__FILE__) . 'icons.svg?' . _getUVArg()))?>
-                    });
-        });
-</script>
-<?php
+    printSegmentJS($arrPostTitles);
 }
 
 function doEnqueueScripts() {
@@ -374,6 +360,25 @@ function filter_plugin_action_links($arrLinks) {
 
 function getUrlSettings() {
     return \admin_url('options-general.php?page=' . SLUG_INFO_SETTINGS);
+}
+
+function printSegmentJS($arrPostTitles) {
+?>
+<script type='text/javascript'>
+    jQuery(document).ready(function($) {
+            new JiffyGalleryPressLightbox({
+                        ajax_url:  <?=\json_encode(
+                                       \wp_make_link_relative(
+                                        \admin_url('admin-ajax.php')))?>, $: $,
+                        titles:    <?=\json_encode($arrPostTitles)?>,
+
+                        url_icons: <?=\json_encode(
+                                       \wp_make_link_relative(
+                                        \plugin_dir_url(__FILE__) . 'icons.svg?' . _getUVArg()))?>
+                    });
+        });
+</script>
+<?php
 }
 
 function shortcode__jiffy_gallery_press($arrAttrs) {
