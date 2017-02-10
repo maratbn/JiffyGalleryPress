@@ -188,11 +188,6 @@ function action__admin_print_footer_scripts() {
             margin-left:                1rem;
         }
 
-        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery {
-            display:                    flex;
-            flex-wrap:                  wrap;
-        }
-
         div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li {
             margin:                     1rem;
         }
@@ -545,7 +540,7 @@ function renderPageInfoSettings() {
               }
           ?><li><?php
             ?><strong><?=$strShortcode?></strong><?php
-            ?><ul class='jgp_gallery'><?php
+            ?><ul class='jgp_gallery jiffy-gallery-press--container'><?php
                 $strIDsThumbnails = \implode($arrIDsThumbnails, ',');
                 $totalListItems = \count($arrListItems);
                 for ($i = 0; $i < $totalListItems; $i++) {
