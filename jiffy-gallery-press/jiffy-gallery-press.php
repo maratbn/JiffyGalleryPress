@@ -303,15 +303,7 @@ function action__wp_enqueue_scripts() {
     $strContent = $post->post_content;
     if (!\has_shortcode($strContent, SHORTCODE__JIFFY_GALLERY_PRESS)) return;
 
-    \wp_enqueue_script('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_js',
-                       \plugin_dir_url(__FILE__) . '/jiffy-gallery-press.js',
-                       array('jquery'),
-                       _getUVArg());
-
-    \wp_enqueue_style('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_css',
-                      plugin_dir_url(__FILE__) . '/jiffy-gallery-press.css',
-                      null,
-                      _getUVArg());
+    doEnqueueScripts();
 }
 
 function action__wp_print_footer_scripts() {
@@ -359,6 +351,18 @@ function action__wp_print_footer_scripts() {
         });
 </script>
 <?php
+}
+
+function doEnqueueScripts() {
+    \wp_enqueue_script('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_js',
+                       \plugin_dir_url(__FILE__) . '/jiffy-gallery-press.js',
+                       array('jquery'),
+                       _getUVArg());
+
+    \wp_enqueue_style('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_css',
+                      plugin_dir_url(__FILE__) . '/jiffy-gallery-press.css',
+                      null,
+                      _getUVArg());
 }
 
 function filter_plugin_action_links($arrLinks) {
