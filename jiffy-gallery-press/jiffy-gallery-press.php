@@ -183,8 +183,7 @@ function action__admin_print_footer_scripts() {
         }
 
         div.jiffy_gallery_press__settings div.jgp_post,
-        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes,
-        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery {
+        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes {
             margin-left:                1rem;
         }
 
