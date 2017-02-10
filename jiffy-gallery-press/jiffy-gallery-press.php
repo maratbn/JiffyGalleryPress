@@ -528,8 +528,8 @@ function renderPageInfoSettings() {
                           $scale   = $width > $height ? ADMIN_THUMB_SIZE / $width
                                                       : ADMIN_THUMB_SIZE / $height;
                       ?><img class='jgp_thumbnail' src='<?=$urlImage?>'<?php
-                        ?>width=<?=\round($width * $scale)?> <?php
-                        ?>height=<?=\round($height * $scale)?>><?php
+                        ?> width=<?=\round($width * $scale)?><?php
+                        ?> height=<?=\round($height * $scale)?>><?php
                       }
 
                   ?><div><?php
