@@ -375,7 +375,7 @@ function generateSegmentThumbnail($index, $strIDsThumbnails, $strURL, $strTitle)
                                       $strIDsThumbnails,
                                    '\'>',
                             '<img',
-                              ' class=\'jiffy-gallery-press--thumbnail\'',
+                              ' class=\'jiffy_gallery_press__thumbnail\'',
                               ' src=\'', \esc_url_raw($strURL), '\'',
                               ' alt=\'', $strTitleEsc, '\'',
                               ' data-caption=\'', $strTitleEsc, '\'',

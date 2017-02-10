@@ -45,7 +45,7 @@
     border-radius:          15px;
 }
 
-.jiffy_gallery_press__container img.jiffy-gallery-press--thumbnail {
+.jiffy_gallery_press__container img.jiffy_gallery_press__thumbnail {
     display:                block;
     width:                  150px;
     height:                 150px;
