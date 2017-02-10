@@ -449,7 +449,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
     }
 
     return \implode(array(
-                '<div class=\'jiffy-gallery-press--container\'>',
+                '<div class=\'jiffy_gallery_press__container\'>',
                   \implode($arrOutputThumbnails),
                 '</div>'));
 }
@@ -538,7 +538,7 @@ function renderPageInfoSettings() {
               }
           ?><li><?php
             ?><strong><?=$strShortcode?></strong><?php
-            ?><ul class='jgp_gallery jiffy-gallery-press--container'><?php
+            ?><ul class='jgp_gallery jiffy_gallery_press__container'><?php
                 $strIDsThumbnails = \implode($arrIDsThumbnails, ',');
                 $totalListItems = \count($arrListItems);
                 for ($i = 0; $i < $totalListItems; $i++) {

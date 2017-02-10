@@ -32,20 +32,20 @@
 */
 
 
-.jiffy-gallery-press--container {
+.jiffy_gallery_press__container {
     display:                flex;
     flex-wrap:              wrap;
     justify-content:        center;
 }
 
-.jiffy-gallery-press--container .jiffy-gallery-press--a {
+.jiffy_gallery_press__container .jiffy-gallery-press--a {
     display:                block;
     margin:                 2px 2px;
     overflow:               hidden;
     border-radius:          15px;
 }
 
-.jiffy-gallery-press--container .jiffy-gallery-press--thumbnail {
+.jiffy_gallery_press__container .jiffy-gallery-press--thumbnail {
     display:                block;
     width:                  150px;
     height:                 150px;
