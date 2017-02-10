@@ -196,9 +196,7 @@ function action__admin_print_footer_scripts() {
         }
 
         div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li img.jgp_thumbnail {
-            border:                     1px solid black;
             border-radius:              0.3rem;
-            padding:                    1px;
             vertical-align:             top;
         }
     </style><?php
