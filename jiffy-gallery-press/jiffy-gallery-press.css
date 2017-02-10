@@ -39,7 +39,7 @@
 }
 
 .jiffy_gallery_press__container a.jiffy_gallery_press__thumbnail {
-    display:                block;
+    display:                inline-block;
     margin:                 2px 2px;
     overflow:               hidden;
     border-radius:          15px;
