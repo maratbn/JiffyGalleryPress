@@ -364,6 +364,24 @@ function filter_plugin_action_links($arrLinks) {
     return $arrLinks;
 }
 
+function generateSegmentThumbnail($index, $strIDsThumbnails, $strURL, $strTitle) {
+    $strTitleEsc = \esc_attr($strTitle);
+
+    return \implode(array('<a class=\'jiffy-gallery-press--a\' href=\'#jgp_closeup&pos=',
+                                      $index,
+                                      '&items=',
+                                      $strIDsThumbnails,
+                                   '\'>',
+                            '<img',
+                              ' class=\'jiffy-gallery-press--thumbnail\'',
+                              ' src=\'', \esc_url_raw($strURL), '\'',
+                              ' alt=\'', $strTitleEsc, '\'',
+                              ' data-caption=\'', $strTitleEsc, '\'',
+                              ' title=\'', $strTitleEsc, '\'',
+                            '>',
+                          '</a>'));
+}
+
 function getUrlSettings() {
     return \admin_url('options-general.php?page=' . SLUG_INFO_SETTINGS);
 }
@@ -420,23 +438,12 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
     for ($i = 0; $i < $totalThumbnails; $i++) {
         $objThumbnail = $arrDataThumbnails[$i];
 
-        $strTitleEsc = \esc_attr($objThumbnail['title']);
-
         \array_push(
             $arrOutputThumbnails,
-            \implode(array('<a class=\'jiffy-gallery-press--a\' href=\'#jgp_closeup&pos=',
-                                       $i,
-                                       '&items=',
-                                       $strIDsThumbnails,
-                                    '\'>',
-                             '<img',
-                               ' class=\'jiffy-gallery-press--thumbnail\'',
-                               ' src=\'', \esc_url_raw($objThumbnail['url']), '\'',
-                               ' alt=\'', $strTitleEsc, '\'',
-                               ' data-caption=\'', $strTitleEsc, '\'',
-                               ' title=\'', $strTitleEsc, '\'',
-                             '>',
-                           '</a>')));
+            generateSegmentThumbnail($i,
+                                     $strIDsThumbnails,
+                                     $objThumbnail['url'],
+                                     $objThumbnail['title']));
     }
 
     return \implode(array(
