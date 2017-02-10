@@ -369,7 +369,7 @@ function filter_plugin_action_links($arrLinks) {
 function generateSegmentThumbnail($index, $strIDsThumbnails, $strURL, $strTitle) {
     $strTitleEsc = \esc_attr($strTitle);
 
-    return \implode(array('<a class=\'jiffy-gallery-press--a\' href=\'#jgp_closeup&pos=',
+    return \implode(array('<a class=\'jiffy_gallery_press__thumbnail\' href=\'#jgp_closeup&pos=',
                                       $index,
                                       '&items=',
                                       $strIDsThumbnails,

@@ -38,7 +38,7 @@
     justify-content:        center;
 }
 
-.jiffy_gallery_press__container a.jiffy-gallery-press--a {
+.jiffy_gallery_press__container a.jiffy_gallery_press__thumbnail {
     display:                block;
     margin:                 2px 2px;
     overflow:               hidden;
