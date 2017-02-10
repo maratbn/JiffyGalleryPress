@@ -424,20 +424,19 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
 
         \array_push(
             $arrOutputThumbnails,
-            \implode(array(
-                '<a class=\'jiffy-gallery-press--a\' href=\'#jgp_closeup&pos=',
-                            $i,
-                            '&items=',
-                            $strIDsThumbnails,
-                         '\'>',
-                  '<img',
-                    ' class=\'jiffy-gallery-press--thumbnail\'',
-                    ' src=\'', \esc_url_raw($objThumbnail['url']), '\'',
-                    ' alt=\'', $strTitleEsc, '\'',
-                    ' data-caption=\'', $strTitleEsc, '\'',
-                    ' title=\'', $strTitleEsc, '\'',
-                  '>',
-                '</a>')));
+            \implode(array('<a class=\'jiffy-gallery-press--a\' href=\'#jgp_closeup&pos=',
+                                       $i,
+                                       '&items=',
+                                       $strIDsThumbnails,
+                                    '\'>',
+                             '<img',
+                               ' class=\'jiffy-gallery-press--thumbnail\'',
+                               ' src=\'', \esc_url_raw($objThumbnail['url']), '\'',
+                               ' alt=\'', $strTitleEsc, '\'',
+                               ' data-caption=\'', $strTitleEsc, '\'',
+                               ' title=\'', $strTitleEsc, '\'',
+                             '>',
+                           '</a>')));
     }
 
     return \implode(array(
