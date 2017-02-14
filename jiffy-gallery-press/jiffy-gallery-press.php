@@ -556,7 +556,7 @@ function renderPageInfoSettings() {
                                                       : ADMIN_THUMB_SIZE / $height;
                       ?><a class='jiffy_gallery_press__thumbnail'<?php
                         ?> href='#jgp_closeup&pos=<?=$i?>&items=<?=$strIDsThumbnails?>'><?php
-                        ?><img class='jgp_thumbnail' src='<?=$urlImage?>'></a><?php
+                        ?><img class='jgp_thumbnail jiffy_gallery_press__thumbnail' src='<?=$urlImage?>'></a><?php
                       }
 
                   ?><div><?php
