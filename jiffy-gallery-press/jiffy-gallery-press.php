@@ -521,10 +521,11 @@ function renderPageInfoSettings() {
                                                                true);
                       $urlImage = $objImage ? $objImage[0] : null;
                       if ($urlImage) {
+                          $strTitle = $postListItem->post_title;
                       ?><?=generateSegmentThumbnail($indexThumbnail,
                                                     $strIDsThumbnails,
                                                     $urlImage,
-                                                    $postListItem->post_title)?><?php
+                                                    $strTitle)?><?php
                       }
 
                   ?><div><?php
