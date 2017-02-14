@@ -50,3 +50,7 @@
     width:                  150px;
     height:                 150px;
 }
+
+div.jiffy_gallery_press__settings .jiffy_gallery_press__container a.jiffy_gallery_press__thumbnail {
+    border-radius:          7px;
+}

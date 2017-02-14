@@ -191,10 +191,6 @@ function action__admin_print_footer_scripts() {
             margin:                     1rem;
         }
 
-        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li a.jgp_thumbnail {
-            border-radius:              7px;
-        }
-
         div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li img.jgp_thumbnail {
             vertical-align:             top;
         }
