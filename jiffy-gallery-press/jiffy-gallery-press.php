@@ -522,7 +522,7 @@ function renderPageInfoSettings() {
                       ?><?=generateSegmentThumbnail($i,
                                                     $strIDsThumbnails,
                                                     $urlImage,
-                                                    "")?><?php
+                                                    $postListItem->post_title)?><?php
                       }
 
                   ?><div><?php
