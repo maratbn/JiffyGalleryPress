@@ -1,0 +1,18 @@
+-----------------  WordPress plugin Jiffy Gallery Press  ------------------
+
+https://github.com/maratbn/JiffyGalleryPress
+
+Copyright (C) 2016-2017  Marat Nepomnyashy  http://maratbn.com  maratbn@gmail
+
+Version: 0.0.2-development_unreleased
+
+This software is normally installed from the WordPress admin dashboard.
+
+Licensed under GPL3.  See LICENSE.
+
+Description:
+
+  Setup image galleries in a jiffy via shortcodes specifying image slugs, and
+  have the images load in a jiffy by downloading only the minimum size image
+  necessary for the client viewport size.  No locked premium features and
+  tested to work on iOS devices.
