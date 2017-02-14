@@ -519,9 +519,10 @@ function renderPageInfoSettings() {
                                                                true);
                       $urlImage = $objImage ? $objImage[0] : null;
                       if ($urlImage) {
-                      ?><a class='jiffy_gallery_press__thumbnail'<?php
-                        ?> href='#jgp_closeup&pos=<?=$i?>&items=<?=$strIDsThumbnails?>'><?php
-                        ?><img class='jiffy_gallery_press__thumbnail' src='<?=$urlImage?>'></a><?php
+                      ?><?=generateSegmentThumbnail($i,
+                                                    $strIDsThumbnails,
+                                                    $urlImage,
+                                                    "")?><?php
                       }
 
                   ?><div><?php
