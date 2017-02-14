@@ -14,7 +14,8 @@ Setup image galleries in a jiffy via shortcodes.  No locked premium features.
 
   Setup image galleries in a jiffy via shortcodes specifying image slugs, and
   have the images load in a jiffy by downloading only the minimum size image
-  necessary for the client viewport size.
+  necessary for the client viewport size.  Images are rendered as large as
+  possible within the viewport.
 
   No locked premium features and tested to work on iOS devices.
 
