@@ -552,7 +552,7 @@ function renderPageInfoSettings() {
                           $height  = $objImage[2];
                           $scale   = $width > $height ? ADMIN_THUMB_SIZE / $width
                                                       : ADMIN_THUMB_SIZE / $height;
-                      ?><a class='jiffy_gallery_press__thumbnail jgp_thumbnail'<?php
+                      ?><a class='jiffy_gallery_press__thumbnail'<?php
                         ?> href='#jgp_closeup&pos=<?=$i?>&items=<?=$strIDsThumbnails?>'><?php
                         ?><img class='jgp_thumbnail' src='<?=$urlImage?>'<?php
                           ?> width=<?=\round($width * $scale)?><?php
