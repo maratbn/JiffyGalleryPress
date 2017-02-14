@@ -514,8 +514,8 @@ function renderPageInfoSettings() {
                     if (!$postListItem) continue;
 
                 ?><li><?php
-
-                      $objImage = \wp_get_attachment_image_src($postListItem->ID,
+                      $idPost = $postListItem->ID;
+                      $objImage = \wp_get_attachment_image_src($idPost,
                                                                array(ADMIN_THUMB_SIZE,
                                                                      ADMIN_THUMB_SIZE),
                                                                true);
