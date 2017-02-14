@@ -534,7 +534,7 @@ function renderPageInfoSettings() {
               }
           ?><li><?php
             ?><strong><?=$strShortcode?></strong><?php
-            ?><ul class='jgp_gallery jiffy_gallery_press__container'><?php
+            ?><ul class='jiffy_gallery_press__container'><?php
                 $strIDsThumbnails = \implode($arrIDsThumbnails, ',');
                 $totalListItems = \count($arrListItems);
                 for ($i = 0; $i < $totalListItems; $i++) {
