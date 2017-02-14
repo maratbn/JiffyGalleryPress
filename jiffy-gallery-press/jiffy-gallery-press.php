@@ -499,6 +499,7 @@ function renderPageInfoSettings() {
                                                   $indexItem,
                                                   \strlen($strListItem));
 
+                  if (!$postListItem) continue;
                   \array_push($arrIDsThumbnails, $postListItem->ID);
               }
           ?><li><?php
