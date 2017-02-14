@@ -193,6 +193,8 @@ function action__admin_print_footer_scripts() {
 
         div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li img.jgp_thumbnail {
             vertical-align:             top;
+            width:                      <?=ADMIN_THUMB_SIZE?>px;
+            height:                     <?=ADMIN_THUMB_SIZE?>px;
         }
     </style><?php
 }
@@ -554,9 +556,7 @@ function renderPageInfoSettings() {
                                                       : ADMIN_THUMB_SIZE / $height;
                       ?><a class='jiffy_gallery_press__thumbnail'<?php
                         ?> href='#jgp_closeup&pos=<?=$i?>&items=<?=$strIDsThumbnails?>'><?php
-                        ?><img class='jgp_thumbnail' src='<?=$urlImage?>'<?php
-                          ?> width=<?=\round($width * $scale)?><?php
-                          ?> height=<?=\round($height * $scale)?>></a><?php
+                        ?><img class='jgp_thumbnail' src='<?=$urlImage?>'></a><?php
                       }
 
                   ?><div><?php
