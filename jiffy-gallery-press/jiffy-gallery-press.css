@@ -51,6 +51,23 @@
     height:                 150px;
 }
 
+div.jiffy_gallery_press__settings h4.jiffy_gallery_press__post {
+    margin:                 0;
+}
+
+div.jiffy_gallery_press__settings div.jiffy_gallery_press__post {
+    display:                block;
+}
+
+div.jiffy_gallery_press__settings div.jiffy_gallery_press__post,
+div.jiffy_gallery_press__settings div.jiffy_gallery_press__post ul.jiffy_gallery_press__shortcodes {
+    margin-left:            1rem;
+}
+
+div.jiffy_gallery_press__settings div.jiffy_gallery_press__post ul.jiffy_gallery_press__shortcodes li ul.jiffy_gallery_press__container > li {
+    margin:                 1rem;
+}
+
 div.jiffy_gallery_press__settings div.jiffy_gallery_press__post ul.jiffy_gallery_press__shortcodes li ul.jiffy_gallery_press__container > li a.jiffy_gallery_press__thumbnail {
     border-radius:          7px;
 }

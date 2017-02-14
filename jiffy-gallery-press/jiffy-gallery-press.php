@@ -174,22 +174,6 @@ function action__admin_print_footer_scripts() {
     $current_screen = \get_current_screen();
     if ($current_screen->base != 'settings_page_' . SLUG_INFO_SETTINGS) return;
     ?><style>
-        div.jiffy_gallery_press__settings h4.jiffy_gallery_press__post {
-            margin:                     0;
-        }
-
-        div.jiffy_gallery_press__settings div.jiffy_gallery_press__post {
-            display:                    block;
-        }
-
-        div.jiffy_gallery_press__settings div.jiffy_gallery_press__post,
-        div.jiffy_gallery_press__settings div.jiffy_gallery_press__post ul.jiffy_gallery_press__shortcodes {
-            margin-left:                1rem;
-        }
-
-        div.jiffy_gallery_press__settings div.jiffy_gallery_press__post ul.jiffy_gallery_press__shortcodes li ul.jiffy_gallery_press__container > li {
-            margin:                     1rem;
-        }
     </style><?php
 }
 
