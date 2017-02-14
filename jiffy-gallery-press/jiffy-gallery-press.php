@@ -506,6 +506,7 @@ function renderPageInfoSettings() {
             ?><ul class='jiffy_gallery_press__container'><?php
                 $strIDsThumbnails = \implode($arrIDsThumbnails, ',');
                 $totalListItems = \count($arrListItems);
+                $indexThumbnail = 0;
                 for ($i = 0; $i < $totalListItems; $i++) {
                     $strListItem = $arrListItems[$i];
                     $postListItem = _getPostForImageByName($strListItem);
@@ -519,7 +520,7 @@ function renderPageInfoSettings() {
                                                                true);
                       $urlImage = $objImage ? $objImage[0] : null;
                       if ($urlImage) {
-                      ?><?=generateSegmentThumbnail($i,
+                      ?><?=generateSegmentThumbnail($indexThumbnail,
                                                     $strIDsThumbnails,
                                                     $urlImage,
                                                     $postListItem->post_title)?><?php
@@ -530,6 +531,8 @@ function renderPageInfoSettings() {
                                    \get_edit_post_link($postListItem->ID))?>' target='_blank'><?php
                       ?><?=$strListItem?><?php
                     ?></a></div></li><?php
+
+                    $indexThumbnail++;
                 }
             ?></ul><?php
           ?></li><?php
