@@ -174,24 +174,24 @@ function action__admin_print_footer_scripts() {
     $current_screen = \get_current_screen();
     if ($current_screen->base != 'settings_page_' . SLUG_INFO_SETTINGS) return;
     ?><style>
-        div.jiffy_gallery_press__settings h4.jgp_post {
+        div.jiffy_gallery_press__settings h4.jiffy_gallery_press__post {
             margin:                     0;
         }
 
-        div.jiffy_gallery_press__settings div.jgp_post {
+        div.jiffy_gallery_press__settings div.jiffy_gallery_press__post {
             display:                    block;
         }
 
-        div.jiffy_gallery_press__settings div.jgp_post,
-        div.jiffy_gallery_press__settings div.jgp_post ul.jiffy_gallery_press__shortcodes {
+        div.jiffy_gallery_press__settings div.jiffy_gallery_press__post,
+        div.jiffy_gallery_press__settings div.jiffy_gallery_press__post ul.jiffy_gallery_press__shortcodes {
             margin-left:                1rem;
         }
 
-        div.jiffy_gallery_press__settings div.jgp_post ul.jiffy_gallery_press__shortcodes li ul.jiffy_gallery_press__container > li {
+        div.jiffy_gallery_press__settings div.jiffy_gallery_press__post ul.jiffy_gallery_press__shortcodes li ul.jiffy_gallery_press__container > li {
             margin:                     1rem;
         }
 
-        div.jiffy_gallery_press__settings div.jgp_post ul.jiffy_gallery_press__shortcodes li ul.jiffy_gallery_press__container > li img.jiffy_gallery_press__thumbnail {
+        div.jiffy_gallery_press__settings div.jiffy_gallery_press__post ul.jiffy_gallery_press__shortcodes li ul.jiffy_gallery_press__container > li img.jiffy_gallery_press__thumbnail {
             vertical-align:             top;
             width:                      <?=ADMIN_THUMB_SIZE?>px;
             height:                     <?=ADMIN_THUMB_SIZE?>px;
@@ -496,8 +496,8 @@ function renderPageInfoSettings() {
         $strPermalink = \get_permalink($post->ID);
 
     ?><li><?php
-      ?><h4 class='jgp_post'><?=\get_the_title($post->ID)?></h4><?php
-      ?><div class='jgp_post'><?php
+      ?><h4 class='jiffy_gallery_press__post'><?=\get_the_title($post->ID)?></h4><?php
+      ?><div class='jiffy_gallery_press__post'><?php
         ?><a href='<?=\esc_url_raw($strPermalink)?>' target='_blank'><?=$strPermalink?></a><?php
         ?><br><?php
         ?><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
