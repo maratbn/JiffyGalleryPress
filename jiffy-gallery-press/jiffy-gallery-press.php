@@ -187,11 +187,11 @@ function action__admin_print_footer_scripts() {
             margin-left:                1rem;
         }
 
-        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li {
+        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jiffy_gallery_press__container > li {
             margin:                     1rem;
         }
 
-        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jgp_gallery > li img.jiffy_gallery_press__thumbnail {
+        div.jiffy_gallery_press__settings div.jgp_post ul.jgp_shortcodes li ul.jiffy_gallery_press__container > li img.jiffy_gallery_press__thumbnail {
             vertical-align:             top;
             width:                      <?=ADMIN_THUMB_SIZE?>px;
             height:                     <?=ADMIN_THUMB_SIZE?>px;
