@@ -83,8 +83,6 @@ if (\is_admin()) {
                 '\\plugin_JiffyGalleryPress\\action__admin_enqueue_scripts');
     \add_action('admin_menu',
                 '\\plugin_JiffyGalleryPress\\action__admin_menu');
-    \add_action('admin_print_footer_scripts',
-                '\\plugin_JiffyGalleryPress\\action__admin_print_footer_scripts');
     \add_action('wp_ajax_jiffy_gallery_press__get_image',
                 '\\plugin_JiffyGalleryPress\\action__wp_ajax_jiffy_gallery_press__get_image');
 
@@ -168,13 +166,6 @@ function action__admin_menu() {
                     'manage_options',
                     SLUG_INFO_SETTINGS,
                     '\\plugin_JiffyGalleryPress\\renderPageInfoSettings');
-}
-
-function action__admin_print_footer_scripts() {
-    $current_screen = \get_current_screen();
-    if ($current_screen->base != 'settings_page_' . SLUG_INFO_SETTINGS) return;
-    ?><style>
-    </style><?php
 }
 
 function action__wp_ajax_jiffy_gallery_press__get_image() {
