@@ -519,10 +519,6 @@ function renderPageInfoSettings() {
                                                                true);
                       $urlImage = $objImage ? $objImage[0] : null;
                       if ($urlImage) {
-                          $width   = $objImage[1];
-                          $height  = $objImage[2];
-                          $scale   = $width > $height ? ADMIN_THUMB_SIZE / $width
-                                                      : ADMIN_THUMB_SIZE / $height;
                       ?><a class='jiffy_gallery_press__thumbnail'<?php
                         ?> href='#jgp_closeup&pos=<?=$i?>&items=<?=$strIDsThumbnails?>'><?php
                         ?><img class='jiffy_gallery_press__thumbnail' src='<?=$urlImage?>'></a><?php
