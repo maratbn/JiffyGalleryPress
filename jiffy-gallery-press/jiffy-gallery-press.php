@@ -503,7 +503,7 @@ function renderPageInfoSettings() {
         ?><a href='<?=\esc_url_raw(\get_edit_post_link($post->ID))?>' target='_blank'><?php
           ?><?=$post->post_name?><?php
         ?></a><?php
-        ?><ul class='jgp_shortcodes'><?php
+        ?><ul class='jgp_shortcodes jiffy_gallery_press__shortcodes'><?php
           $arrMatchesShortcode = _getMatchesInContent($strContent);
 
           foreach ($arrMatchesShortcode as $arrMatchShortcode) {
