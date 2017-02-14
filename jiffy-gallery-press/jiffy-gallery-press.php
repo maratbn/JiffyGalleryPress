@@ -528,8 +528,8 @@ function renderPageInfoSettings() {
                   ?><div><?php
                     ?><a href='<?=\esc_url_raw(
                                    \get_edit_post_link($postListItem->ID))?>' target='_blank'><?php
-                    ?><?=$strListItem?><?php
-                  ?></a></div></li><?php
+                      ?><?=$strListItem?><?php
+                    ?></a></div></li><?php
                 }
             ?></ul><?php
           ?></li><?php
