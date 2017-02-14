@@ -486,8 +486,6 @@ function renderPageInfoSettings() {
 
                   $postListItem = _getPostForImageByName($strListItem);
 
-                  \array_push($arrIDsThumbnails, $postListItem->ID);
-
                   $strListItemReplace = $postListItem
                                       ? '<a href=\'' . \esc_url_raw(
                                                         \get_edit_post_link($postListItem->ID))
@@ -500,6 +498,8 @@ function renderPageInfoSettings() {
                                                   $strListItemReplace,
                                                   $indexItem,
                                                   \strlen($strListItem));
+
+                  \array_push($arrIDsThumbnails, $postListItem->ID);
               }
           ?><li><?php
             ?><strong><?=$strShortcode?></strong><?php
