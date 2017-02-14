@@ -444,6 +444,7 @@ function renderPageInfoSettings() {
                DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?></h2><?php
 
     $totalPostsUsingShortcode = 0;
+    $arrPostTitles = array();
 
     $w_p_query = new \WP_Query(array('order'           => 'ASC',
                                      'orderby'         => 'name',
@@ -522,6 +523,7 @@ function renderPageInfoSettings() {
                       $urlImage = $objImage ? $objImage[0] : null;
                       if ($urlImage) {
                           $strTitle = $postListItem->post_title;
+                          $arrPostTitles[$idPost] = $strTitle;
                       ?><?=generateSegmentThumbnail($indexThumbnail,
                                                     $strIDsThumbnails,
                                                     $urlImage,
@@ -548,6 +550,8 @@ function renderPageInfoSettings() {
   if ($totalPostsUsingShortcode == 0) {
     ?><?=\__('Currently no posts use the Jiffy Gallery Press shortcode.',
              DOMAIN_PLUGIN_JIFFY_GALLERY_PRESS)?><?php
+  } else {
+      printSegmentJS($arrPostTitles);
   }
 ?></div><?php
 }
