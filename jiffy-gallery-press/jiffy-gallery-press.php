@@ -302,16 +302,6 @@ function action__wp_print_footer_scripts() {
     printSegmentJS($arrPostTitles);
 }
 
-function getPostTitle($post) {
-    $strTitleUse = $post->post_excerpt;
-
-    if (\strlen($strTitleUse) == 0) {
-        $strTitleUse = $post->post_title;
-    }
-
-    return $strTitleUse;
-}
-
 function doEnqueueScripts() {
     \wp_enqueue_script('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_js',
                        \plugin_dir_url(__FILE__) . '/jiffy-gallery-press.js',
@@ -347,6 +337,16 @@ function generateSegmentThumbnail($index, $strIDsThumbnails, $strURL, $strTitle)
                               ' title=\'', $strTitleEsc, '\'',
                             '>',
                           '</a>'));
+}
+
+function getPostTitle($post) {
+    $strTitleUse = $post->post_excerpt;
+
+    if (\strlen($strTitleUse) == 0) {
+        $strTitleUse = $post->post_title;
+    }
+
+    return $strTitleUse;
 }
 
 function getUrlSettings() {
