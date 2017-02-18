@@ -17,7 +17,7 @@ Setup image galleries in a jiffy via shortcodes.  No locked premium features.
   necessary for the client viewport size.  Images are rendered as large as
   possible within the viewport.
 
-  No locked premium features and tested to work on iOS devices.
+  No locked premium features, and tested to work on iOS devices.
 
 Official project URLs:
 
