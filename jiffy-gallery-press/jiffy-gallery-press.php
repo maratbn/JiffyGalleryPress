@@ -343,6 +343,10 @@ function getPostTitle($post) {
     $strTitleUse = $post->post_excerpt;
 
     if (\strlen($strTitleUse) == 0) {
+        $strTitleUse = \get_post_meta($post->ID, '_wp_attachment_image_alt', true);
+    }
+
+    if (\strlen($strTitleUse) == 0) {
         $strTitleUse = $post->post_title;
     }
 
