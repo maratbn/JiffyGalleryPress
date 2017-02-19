@@ -54,3 +54,8 @@ Post pull requests at: https://github.com/maratbn/JiffyGalleryPress/pulls
 
 3. Image in close-up mode rendered as large as possible within the viewport.
 
+
+== Changelog ==
+
+= 1.0.0 =
+* Initial release.
