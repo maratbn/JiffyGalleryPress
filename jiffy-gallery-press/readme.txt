@@ -3,7 +3,7 @@ Contributors: maratbn
 Tags: gallery, image, image gallery, media, expand image
 Requires at least: 3.8.3
 Tested up to: 4.7.2
-Stable tag: 0.0.0
+Stable tag: 1.0.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
