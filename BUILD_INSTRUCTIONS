@@ -1,0 +1,5 @@
+These are the instructions for minifying JavaScript for production:
+
+(1) Run 'npm install'.
+
+(2) Run 'do_minify_js'
