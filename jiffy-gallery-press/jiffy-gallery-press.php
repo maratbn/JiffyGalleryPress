@@ -395,7 +395,7 @@ function shortcode__jiffy_gallery_press($arrAttrs) {
         if ($urlImage == null) continue;
 
         \array_push($arrDataThumbnails, array('url'    => $urlImage,
-                                              'title'  => $postItem->post_title));
+                                              'title'  => getPostTitle($postItem)));
         \array_push($arrIDsThumbnails, $postItem->ID);
     }
 
@@ -522,7 +522,7 @@ function renderPageInfoSettings() {
                                                                true);
                       $urlImage = $objImage ? $objImage[0] : null;
                       if ($urlImage) {
-                          $strTitle = $postListItem->post_title;
+                          $strTitle = getPostTitle($postListItem);
                           $arrPostTitles[$idPost] = $strTitle;
                       ?><?=generateSegmentThumbnail($indexThumbnail,
                                                     $strIDsThumbnails,
