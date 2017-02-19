@@ -21,6 +21,7 @@ Setup image galleries in a jiffy via shortcodes.  No locked premium features.
 
 Official project URLs:
 
+  http://www.maratbn.com/projects/jiffy-gallery-press/  (demo page)
   https://github.com/maratbn/JiffyGalleryPress
 
 
