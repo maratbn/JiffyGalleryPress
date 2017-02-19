@@ -43,3 +43,9 @@ Post issues / bugs / feature requests at: https://github.com/maratbn/JiffyGaller
 = Where can I post pull requests? =
 
 Post pull requests at: https://github.com/maratbn/JiffyGalleryPress/pulls
+
+
+== Screenshots ==
+
+1. Jiffy Gallery Press shortcode rendered on page.
+
