@@ -31,7 +31,7 @@
   along with Jiffy Gallery Press.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-function JiffyGalleryPressLightbox(params) {
+window.JiffyGalleryPressLightbox = function (params) {
 
     var $         = params.$,
         ajax_url  = params.ajax_url,
