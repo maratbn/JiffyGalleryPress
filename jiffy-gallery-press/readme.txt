@@ -49,3 +49,4 @@ Post pull requests at: https://github.com/maratbn/JiffyGalleryPress/pulls
 
 1. Jiffy Gallery Press shortcode rendered on page.
 
+2. Jiffy Gallery Press admin settings screen.
