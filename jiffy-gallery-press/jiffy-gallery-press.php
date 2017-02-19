@@ -304,7 +304,7 @@ function action__wp_print_footer_scripts() {
 
 function doEnqueueScripts() {
     \wp_enqueue_script('plugin__Jiffy-Gallery-Press__jiffy-gallery-press_js',
-                       \plugin_dir_url(__FILE__) . '/jiffy-gallery-press.js',
+                       \plugin_dir_url(__FILE__) . '/jiffy-gallery-press.min.js',
                        array('jquery'),
                        _getUVArg());
 
