@@ -365,20 +365,21 @@ window.JiffyGalleryPressLightbox = function (params) {
                                    .appendTo($divPhotoC);
 
 
+    $('<a>').attr('href', '#jgp_close')
+            .css({'display':             'block',
+                  'width':               '50px',
+                  'height':              '60px',
+                  'background-image':    'url(' + url_icons + ')',
+                  'background-position': '-157px -195px',
+                  'background-repeat':   'no-repeat',
+                  'position':            'absolute',
+                  'top':                 '10px',
+                  'right':               '10px'})
+            .appendTo($divStripRight)
+
+
     var $divTitle   = $('<div>').css({'color':              'white'})
                                 .appendTo($divBrowser),
-
-        $aIconClose  = $('<a>').attr('href', '#jgp_close')
-                               .css({'display':             'block',
-                                     'width':               '50px',
-                                     'height':              '60px',
-                                     'background-image':    'url(' + url_icons + ')',
-                                     'background-position': '-157px -195px',
-                                     'background-repeat':   'no-repeat',
-                                     'position':            'absolute',
-                                     'top':                 '10px',
-                                     'right':               '10px'})
-                               .appendTo($divStripRight),
 
         $aIconNext  = $('<a>').css({'display':              'block',
                                     'width':                '80px',
