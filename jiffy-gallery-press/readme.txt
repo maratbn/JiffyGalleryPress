@@ -19,11 +19,13 @@ Setup image galleries in a jiffy via shortcodes.  No locked premium features.
 
   No locked premium features, and tested to work on iOS devices.
 
+  Demo at: http://www.maratbn.com/projects/jiffy-gallery-press/#demo
+
 Official project URLs:
 
   https://wordpress.org/plugins/jiffy-gallery-press
   https://github.com/maratbn/JiffyGalleryPress
-  http://www.maratbn.com/projects/jiffy-gallery-press/  (demo page)
+  http://www.maratbn.com/projects/jiffy-gallery-press
 
 
 == Installation ==
