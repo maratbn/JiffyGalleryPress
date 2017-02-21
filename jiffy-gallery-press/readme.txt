@@ -62,5 +62,8 @@ Post pull requests at: https://github.com/maratbn/JiffyGalleryPress/pulls
 
 == Changelog ==
 
+= 1.1.0 =
+* Added screenshot of close-up mode on iPhone 7.
+
 = 1.0.0 =
 * Initial release.
