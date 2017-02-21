@@ -63,6 +63,7 @@ Post pull requests at: https://github.com/maratbn/JiffyGalleryPress/pulls
 == Changelog ==
 
 = 1.1.0 =
+* Added URL to the plugin's page on the WordPress Plugins website.
 * Added screenshot of close-up mode on iPhone 7.
 
 = 1.0.0 =
