@@ -365,11 +365,7 @@ function printSegmentJS($arrPostTitles) {
                         ajax_url:  <?=\json_encode(
                                        \wp_make_link_relative(
                                         \admin_url('admin-ajax.php')))?>, $: $,
-                        titles:    <?=\json_encode($arrPostTitles)?>,
-
-                        url_icons: <?=\json_encode(
-                                       \wp_make_link_relative(
-                                        \plugin_dir_url(__FILE__) . 'icons.svg?' . _getUVArg()))?>
+                        titles:    <?=\json_encode($arrPostTitles)?>
                     });
         });
 </script>

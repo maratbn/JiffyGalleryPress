@@ -35,7 +35,6 @@ window.JiffyGalleryPressLightbox = function (params) {
 
     var $         = params.$,
         ajax_url  = params.ajax_url,
-        url_icons = params.url_icons,
         objTitles = params.titles;
 
 
