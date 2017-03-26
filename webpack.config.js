@@ -7,7 +7,7 @@
 
   Copyright (C) 2016-2017  Marat Nepomnyashy  http://maratbn.com  maratbn@gmail
 
-  Version:        1.1.0-development_unreleased
+  Version:        1.2.0-development_unreleased
 
   Module:         webpack.config.js
 
